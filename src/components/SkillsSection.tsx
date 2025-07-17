@@ -66,17 +66,19 @@ const SkillsSection = () => {
       ]
     },
     ai: {
-      title: 'AI/ML Technologies',
+      title: 'Generative AI & Prompt Engineering',
       icon: Brain,
       color: 'secondary',
       skills: [
-        { name: 'LangChain', level: 'Proficient', experience: '1+ years' },
-        { name: 'OpenAI API', level: 'Proficient', experience: '1+ years' },
-        { name: 'Hugging Face', level: 'Proficient', experience: 'Dual-LLM project' },
-        { name: 'Prompt Engineering', level: 'Proficient', experience: 'AI development' },
-        { name: 'TensorFlow/Keras', level: 'Proficient', experience: 'Bachelor\'s thesis' },
-        { name: 'Scikit-learn', level: 'Proficient', experience: '2+ years' },
+        { name: 'Generative AI Development', level: 'Proficient', experience: 'AI agents & chatbots' },
+        { name: 'Prompt Engineering', level: 'Proficient', experience: 'Advanced prompt techniques' },
+        { name: 'Vibe Coding (AI-Assisted)', level: 'Proficient', experience: 'AI-enhanced development' },
+        { name: 'LangChain Framework', level: 'Proficient', experience: '1+ years' },
+        { name: 'OpenAI API Integration', level: 'Proficient', experience: '1+ years' },
+        { name: 'Hugging Face Models', level: 'Proficient', experience: 'Dual-LLM project' },
         { name: 'RAG Implementation', level: 'Proficient', experience: 'Chatbot development' },
+        { name: 'AI Agent Building', level: 'Proficient', experience: 'Microsoft certification' },
+        { name: 'TensorFlow/Keras', level: 'Proficient', experience: 'Bachelor\'s thesis' },
         { name: 'MMPose & SemGCN', level: 'Proficient', experience: '3D pose estimation' }
       ]
     },
@@ -209,6 +211,7 @@ const SkillsSection = () => {
           <h3 className="text-2xl font-bold text-center mb-8">Certifications & Learning</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
+              'Microsoft: Building AI Agents for Beginners (2025)',
               'Microsoft Azure Fundamentals (2023)',
               'Full-Stack Web Development (LinkedIn Learning)',
               'React Front-End Development (LinkedIn Learning)',

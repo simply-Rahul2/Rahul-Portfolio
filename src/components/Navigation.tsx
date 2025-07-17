@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Github, Linkedin, Mail, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -72,6 +73,7 @@ const Navigation = () => {
                 <span className="sr-only">{link.label}</span>
               </a>
             ))}
+            <ThemeToggle />
             <Button variant="default" size="sm" className="ml-4">
               <Download className="h-4 w-4 mr-2" />
               Resume
@@ -121,6 +123,7 @@ const Navigation = () => {
                     <span className="sr-only">{link.label}</span>
                   </a>
                 ))}
+                <ThemeToggle />
                 <Button variant="default" size="sm" className="ml-4">
                   <Download className="h-4 w-4 mr-2" />
                   Resume

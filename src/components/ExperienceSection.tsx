@@ -9,7 +9,7 @@ const ExperienceSection = () => {
       company: 'Gaddr',
       location: 'Sweden',
       period: 'March 2025 - Present',
-      type: 'Full-time',
+      type: 'Internship',
       description: 'Leading cross-functional teams and developing AI-enhanced consumer applications',
       achievements: [
         'Led 5-member cross-functional team development of 30+ consumer-facing web applications',

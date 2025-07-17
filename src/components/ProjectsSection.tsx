@@ -141,7 +141,7 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {projects.map((project, index) => {
             const CategoryIcon = getCategoryIcon(project.category);
             const categoryColor = getCategoryColor(project.category);
@@ -217,12 +217,12 @@ const ProjectsSection = () => {
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4 border-t">
                     <Button variant="default" size="sm" className="flex-1">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      View Demo
+                      <Github className="h-4 w-4 mr-2" />
+                      View on GitHub
                     </Button>
                     <Button variant="outline" size="sm" className="flex-1">
-                      <Github className="h-4 w-4 mr-2" />
-                      Source Code
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Live Demo
                     </Button>
                   </div>
                 </CardContent>

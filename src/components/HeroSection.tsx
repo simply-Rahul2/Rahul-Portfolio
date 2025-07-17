@@ -72,7 +72,7 @@ const HeroSection = () => {
               📍 Karlskrona, Sweden • 🌍 Open to Stockholm relocation
             </p>
             <p className="text-sm">
-              🚀 Available for Full-Time, Freelance, or Consulting opportunities
+              🚀 Currently exploring opportunities for full-time positions in Sweden
             </p>
           </div>
 
