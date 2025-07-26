@@ -42,8 +42,8 @@ const AboutSection = () => {
           <div className="animate-fade-in-up">
             <div className="space-y-6 text-lg leading-relaxed">
               <p>
-                I'm a <span className="text-primary font-semibold">dynamic Full-Stack Developer</span> with{' '}
-                <span className="text-secondary font-semibold">over 3.5 years</span> of experience building scalable, 
+                I'm a <span className="text-accent font-semibold">recent graduate</span> & <span className="text-primary font-semibold">dynamic Full-Stack Developer</span> with{' '}
+                <span className="text-secondary font-semibold">3+ years</span> of experience building scalable, 
                 consumer-centric applications using modern technologies like{' '}
                 <span className="text-accent font-semibold">C#, .NET Core, Angular, React, and cloud-native platforms</span>.
               </p>

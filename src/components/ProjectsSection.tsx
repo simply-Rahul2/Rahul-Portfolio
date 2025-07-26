@@ -20,7 +20,7 @@ const ProjectsSection = () => {
       ],
       technologies: ['C#', '.NET Core', 'ASP.NET Core', 'Angular', 'SQL Server', 'Entity Framework Core', 'JWT', 'Chart.js', 'NgRx', 'Swagger UI'],
       highlights: ['100% client satisfaction', 'Scalable architecture', 'Real-time features'],
-      demoUrl: '#',
+      demoUrl: 'https://taskflow-dev.netlify.app/',
       githubUrl: '#'
     },
     {
@@ -141,7 +141,7 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {projects.map((project, index) => {
             const CategoryIcon = getCategoryIcon(project.category);
             const categoryColor = getCategoryColor(project.category);
@@ -216,14 +216,20 @@ const ProjectsSection = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4 border-t">
-                    <Button variant="default" size="sm" className="flex-1">
-                      <Github className="h-4 w-4 mr-2" />
-                      View on GitHub
+                    <Button variant="default" size="sm" className="flex-1" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4 mr-2" />
+                        View on GitHub
+                      </a>
                     </Button>
-                    <Button variant="outline" size="sm" className="flex-1">
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
-                    </Button>
+                    {project.demoUrl !== '#' && (
+                      <Button variant="outline" size="sm" className="flex-1" asChild>
+                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>

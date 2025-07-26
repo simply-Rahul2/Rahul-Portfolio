@@ -16,10 +16,6 @@ const HeroSection = () => {
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center animate-fade-in-up">
-          {/* Greeting */}
-          <p className="text-primary text-lg md:text-xl font-medium mb-4 animate-slide-in-right">
-            Hello, I'm
-          </p>
 
           {/* Name */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-hero bg-clip-text text-transparent leading-tight">
@@ -30,19 +26,19 @@ const HeroSection = () => {
 
           {/* Title */}
           <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed">
-            Dynamic <span className="text-primary font-semibold">Full-Stack Developer</span> with{' '}
-            <span className="text-secondary font-semibold">3.5+ years</span> of experience building scalable,{' '}
+            <span className="text-accent font-semibold">Recent Graduate</span> & Dynamic <span className="text-primary font-semibold">Full-Stack Developer</span> with{' '}
+            <span className="text-secondary font-semibold">3+ years</span> of experience building scalable,{' '}
             <span className="text-accent font-semibold">AI-enhanced</span> applications
           </p>
 
           {/* Skills Highlight */}
           <div className="flex flex-wrap justify-center gap-3 mb-10 text-sm md:text-base">
             {[
+              'GenAI & Prompt Engineering',
               'React & Angular',
               'C# & .NET Core',
-              'Node.js & Python',
-              'AI/ML Integration',
-              'Cloud Technologies'
+              'LangChain & OpenAI',
+              'Vibe Coding'
             ].map((skill, index) => (
               <span
                 key={skill}
@@ -90,7 +86,7 @@ const HeroSection = () => {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 animate-fade-in">
           {[
-            { number: '3.5+', label: 'Years Experience' },
+            { number: '3+', label: 'Years Experience' },
             { number: '30+', label: 'Projects Delivered' },
             { number: '100%', label: 'Client Satisfaction' },
             { number: '5', label: 'Team Members Led' }
