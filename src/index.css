@@ -9,25 +9,25 @@
   :root {
     /* Core Brand Colors */
     --background: 0 0% 100%;
-    --foreground: 215 20% 15%;
+    --foreground: 240 15% 10%;
 
-    /* Brand Primary - Deep Emerald */
-    --primary: 158 65% 50%;
+    /* Brand Primary - Ocean Blue */
+    --primary: 210 98% 45%;
     --primary-foreground: 0 0% 98%;
-    --primary-hover: 158 65% 45%;
-    --primary-light: 158 65% 95%;
+    --primary-hover: 210 98% 40%;
+    --primary-light: 210 98% 95%;
 
-    /* Secondary - Rich Indigo */
-    --secondary: 230 85% 60%;
+    /* Secondary - Purple */
+    --secondary: 270 85% 55%;
     --secondary-foreground: 0 0% 98%;
-    --secondary-hover: 230 85% 55%;
-    --secondary-light: 230 85% 95%;
+    --secondary-hover: 270 85% 50%;
+    --secondary-light: 270 85% 95%;
 
-    /* Accent - Warm Amber */
-    --accent: 45 95% 60%;
+    /* Accent - Coral Pink */
+    --accent: 340 85% 65%;
     --accent-foreground: 0 0% 15%;
-    --accent-hover: 45 95% 55%;
-    --accent-light: 45 95% 95%;
+    --accent-hover: 340 85% 60%;
+    --accent-light: 340 85% 95%;
 
     /* Neutrals */
     --muted: 220 14% 96%;
@@ -50,8 +50,8 @@
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
     --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--accent)) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--primary)) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(158 65% 50%) 0%, hsl(230 85% 60%) 50%, hsl(45 95% 60%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(158 65% 98%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 98% 45%) 0%, hsl(270 85% 55%) 50%, hsl(340 85% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 98% 98%) 100%);
 
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(var(--primary) / 0.05);
@@ -82,32 +82,32 @@
 
   .dark {
     /* Dark Theme */
-    --background: 215 20% 8%;
+    --background: 240 15% 8%;
     --foreground: 0 0% 98%;
 
-    --primary: 158 65% 55%;
-    --primary-foreground: 215 20% 8%;
-    --primary-hover: 158 65% 60%;
-    --primary-light: 158 65% 12%;
+    --primary: 210 98% 50%;
+    --primary-foreground: 240 15% 8%;
+    --primary-hover: 210 98% 55%;
+    --primary-light: 210 98% 12%;
 
-    --secondary: 230 85% 65%;
-    --secondary-foreground: 215 20% 8%;
-    --secondary-hover: 230 85% 70%;
-    --secondary-light: 230 85% 12%;
+    --secondary: 270 85% 60%;
+    --secondary-foreground: 240 15% 8%;
+    --secondary-hover: 270 85% 65%;
+    --secondary-light: 270 85% 12%;
 
-    --accent: 45 95% 65%;
-    --accent-foreground: 215 20% 8%;
-    --accent-hover: 45 95% 70%;
-    --accent-light: 45 95% 12%;
+    --accent: 340 85% 70%;
+    --accent-foreground: 240 15% 8%;
+    --accent-hover: 340 85% 75%;
+    --accent-light: 340 85% 12%;
 
-    --muted: 215 20% 15%;
-    --muted-foreground: 215 15% 65%;
-    --card: 215 20% 10%;
+    --muted: 240 15% 15%;
+    --muted-foreground: 240 10% 65%;
+    --card: 240 15% 10%;
     --card-foreground: 0 0% 98%;
-    --border: 215 20% 18%;
-    --input: 215 20% 18%;
+    --border: 240 15% 18%;
+    --input: 240 15% 18%;
 
-    --gradient-card: linear-gradient(145deg, hsl(215 20% 10%) 0%, hsl(215 20% 12%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(240 15% 10%) 0%, hsl(240 15% 12%) 100%);
     --shadow-glow: 0 0 40px hsl(var(--primary) / 0.2);
   }
 }
