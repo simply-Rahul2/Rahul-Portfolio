@@ -38,7 +38,7 @@ const ProjectsSection = () => {
       ],
       technologies: ['React Native', 'Firebase Firestore', 'Firebase Authentication', 'Jest', 'Cypress', 'GPS APIs'],
       highlights: ['5-person team leadership', 'Cross-platform deployment', 'Real-time sync'],
-      demoUrl: '#',
+      demoUrl: 'https://gameplan-dev.netlify.app/',
       githubUrl: '#'
     },
     {

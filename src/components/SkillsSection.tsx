@@ -87,6 +87,8 @@ const SkillsSection = () => {
       icon: Settings,
       color: 'accent',
       skills: [
+        { name: 'Multi-Agentic Systems', level: 'Proficient', experience: 'AI orchestration' },
+        { name: 'Workflow Automation (n8n)', level: 'Proficient', experience: 'Process automation' },
         { name: 'Agile Methodologies', level: 'Proficient', experience: '3+ years' },
         { name: 'Test-Driven Development', level: 'Proficient', experience: 'Industry practice' },
         { name: 'Pair Programming', level: 'Proficient', experience: 'Team collaboration' },

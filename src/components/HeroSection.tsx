@@ -17,8 +17,8 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col justify-center min-h-screen">
         <div className="text-center animate-fade-in-up flex flex-col justify-center min-h-[80vh]">
 
-          {/* Name - Centered */}
-          <div className="flex-1 flex items-center justify-center">
+          {/* Name - Centered with 4cm spacing */}
+          <div className="flex-1 flex items-center justify-center pt-24">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight">
               Yaswanth Rahul
               <br />
