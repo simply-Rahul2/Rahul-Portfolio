@@ -1,4 +1,4 @@
-import { ArrowDown, Download, Mail } from 'lucide-react';
+import { ArrowDown, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
@@ -17,9 +17,9 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col justify-center min-h-screen">
         <div className="text-center animate-fade-in-up flex flex-col justify-center min-h-[80vh]">
 
-          {/* Name - Centered with 4cm spacing */}
+          {/* Name - Centered with 4cm spacing + enhanced animations */}
           <div className="flex-1 flex items-center justify-center pt-24">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold animate-gradient-text leading-tight animate-scale-bounce">
               Yaswanth Rahul
               <br />
               Yarlagadda
@@ -46,7 +46,7 @@ const HeroSection = () => {
               ].map((skill, index) => (
                 <span
                   key={skill}
-                  className="px-4 py-2 bg-card/80 backdrop-blur-sm rounded-full border text-muted-foreground animate-scale-in"
+                  className="px-4 py-2 bg-card/80 backdrop-blur-sm rounded-full border text-muted-foreground animate-scale-in magnetic-hover"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {skill}
@@ -56,11 +56,7 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="group shadow-hero hover:shadow-glow transition-all duration-300">
-                <Download className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                Download Resume
-              </Button>
-              <Button variant="outline" size="lg" className="group">
+              <Button variant="default" size="lg" className="group shadow-hero hover:shadow-glow transition-all duration-300 hover:scale-105 animate-pulse-glow">
                 <Mail className="h-5 w-5 mr-2 group-hover:animate-pulse" />
                 Get In Touch
               </Button>
@@ -98,10 +94,10 @@ const HeroSection = () => {
           ].map((stat, index) => (
             <div
               key={stat.label}
-              className="text-center p-6 bg-card/50 backdrop-blur-sm rounded-lg border animate-scale-in"
+              className="text-center p-6 bg-card/50 backdrop-blur-sm rounded-lg border animate-scale-bounce magnetic-hover animate-border-morph"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-2">
+              <div className="text-2xl md:text-3xl font-bold text-primary mb-2 animate-gradient-text">
                 {stat.number}
               </div>
               <div className="text-sm text-muted-foreground">
