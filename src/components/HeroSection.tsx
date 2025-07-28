@@ -19,7 +19,7 @@ const HeroSection = () => {
 
           {/* Name - Centered with 4cm spacing + enhanced animations */}
           <div className="flex-1 flex items-center justify-center pt-24">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold animate-gradient-text leading-tight animate-scale-bounce">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight animate-scale-bounce">
               Yaswanth Rahul
               <br />
               Yarlagadda

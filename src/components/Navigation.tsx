@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail, Download } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
@@ -74,10 +74,6 @@ const Navigation = () => {
               </a>
             ))}
             <ThemeToggle />
-            <Button variant="default" size="sm" className="ml-4">
-              <Download className="h-4 w-4 mr-2" />
-              Resume
-            </Button>
           </div>
 
           {/* Mobile menu button */}
@@ -124,10 +120,6 @@ const Navigation = () => {
                   </a>
                 ))}
                 <ThemeToggle />
-                <Button variant="default" size="sm" className="ml-4">
-                  <Download className="h-4 w-4 mr-2" />
-                  Resume
-                </Button>
               </div>
             </div>
           </div>
