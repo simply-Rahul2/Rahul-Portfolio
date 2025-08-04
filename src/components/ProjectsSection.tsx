@@ -60,6 +60,25 @@ const ProjectsSection = () => {
       githubUrl: '#'
     },
     {
+      title: 'Intelligent Consent Flow for Medical Care',
+      description: 'AI-powered healthcare solution that streamlines and humanizes medical consent processes using conversational AI, speech technology, and digital signature capture.',
+      category: 'AI/Healthcare Project',
+      icon: Brain,
+      scale: 'Prototype/Demo-ready',
+      features: [
+        'Converts medical notes/ICD-10/CPT codes to plain-English summaries',
+        'Interactive patient Q&A via text or voice interface',
+        'Accessibility features with instant audio playback (TTS)',
+        'Digital signature capture for verified consent',
+        'Privacy-first architecture with minimal data logging',
+        'Multi-modal consent capture (audio/digital signature)'
+      ],
+      technologies: ['Python', 'Streamlit', 'Perplexity AI API', 'Whisper STT', 'gTTS', 'streamlit-drawable-canvas', 'REST APIs'],
+      highlights: ['Healthcare AI innovation', 'Privacy-focused design', 'Accessibility compliance', 'Multi-modal interaction'],
+      demoUrl: '#',
+      githubUrl: '#'
+    },
+    {
       title: '3D Pose Estimation for Fatigue Detection',
       description: 'Bachelor\'s thesis project achieving 93% accuracy in fatigue detection using smartphone-based 3D pose estimation and machine learning.',
       category: 'Research Project',
