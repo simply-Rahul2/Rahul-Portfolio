@@ -247,7 +247,7 @@ const ContactSection = () => {
           <div className="max-w-3xl mx-auto p-8 bg-gradient-card rounded-lg border">
             <h3 className="text-2xl font-bold mb-4">Ready to Build Something Amazing?</h3>
             <p className="text-muted-foreground mb-6 text-lg">
-              With 3.5+ years of experience, proven leadership skills, and a passion for innovation, 
+              With 3 years of experience, proven leadership skills, and a passion for innovation, 
               I'm ready to contribute to your team's success from day one.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

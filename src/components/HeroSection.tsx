@@ -31,7 +31,7 @@ const HeroSection = () => {
             {/* Title */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
               <span className="text-accent font-semibold">AI-Enhanced</span> & Dynamic <span className="text-primary font-semibold">Full-Stack Developer</span> with{' '}
-              <span className="text-secondary font-semibold">3.5+ years</span> of experience building scalable,{' '}
+              <span className="text-secondary font-semibold">3 years</span> of experience building scalable,{' '}
               <span className="text-accent font-semibold">consumer-centric</span> applications. Leading teams and mentoring developers.
             </p>
 
@@ -87,7 +87,7 @@ const HeroSection = () => {
         {/* Stats - Fixed at bottom */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pb-8 animate-fade-in px-4">
           {[
-            { number: '3.5+', label: 'Years Experience' },
+            { number: '3', label: 'Years Experience' },
             { number: '30+', label: 'Projects Delivered' },
             { number: '100%', label: 'Client Satisfaction' },
             { number: '5', label: 'Team Members Led' }
