@@ -19,7 +19,7 @@ const HeroSection = () => {
 
           {/* Name - Centered with 4cm spacing + enhanced animations */}
           <div className="flex-1 flex items-center justify-center pt-24">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight animate-scale-bounce">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight animate-scale-bounce text-center px-4">
               Yaswanth Rahul
               <br />
               Yarlagadda
@@ -29,20 +29,20 @@ const HeroSection = () => {
           {/* Content Below Name */}
           <div className="space-y-8">
             {/* Title */}
-            <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              <span className="text-accent font-semibold">Recent Graduate</span> & Dynamic <span className="text-primary font-semibold">Full-Stack Developer</span> with{' '}
-              <span className="text-secondary font-semibold">3+ years</span> of experience building scalable,{' '}
-              <span className="text-accent font-semibold">AI-enhanced</span> applications
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
+              <span className="text-accent font-semibold">AI-Enhanced</span> & Dynamic <span className="text-primary font-semibold">Full-Stack Developer</span> with{' '}
+              <span className="text-secondary font-semibold">3.5+ years</span> of experience building scalable,{' '}
+              <span className="text-accent font-semibold">consumer-centric</span> applications. Leading teams and mentoring developers.
             </p>
 
             {/* Skills Highlight */}
-            <div className="flex flex-wrap justify-center gap-3 text-sm md:text-base">
+            <div className="flex flex-wrap justify-center gap-3 text-sm md:text-base px-4">
               {[
-                'GenAI & Prompt Engineering',
-                'React & Angular',
+                'GenAI & LangChain',
+                'Angular & React',
                 'C# & .NET Core',
-                'LangChain & OpenAI',
-                'Vibe Coding'
+                'AWS & Azure',
+                'Team Leadership'
               ].map((skill, index) => (
                 <span
                   key={skill}
@@ -63,12 +63,12 @@ const HeroSection = () => {
             </div>
 
             {/* Location & Availability */}
-            <div className="text-muted-foreground">
+            <div className="text-muted-foreground px-4">
               <p className="text-sm md:text-base">
-                📍 Karlskrona, Sweden • 🌍 Open to Stockholm relocation
+                📍 Karlskrona, Blekinge, Sweden • 🌍 Open to Stockholm relocation
               </p>
               <p className="text-sm">
-                🚀 Currently exploring opportunities for full-time positions in Sweden
+                🚀 Available for Full-Time, Freelance, or Consultant positions
               </p>
             </div>
 
@@ -85,9 +85,9 @@ const HeroSection = () => {
         </div>
 
         {/* Stats - Fixed at bottom */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-8 animate-fade-in">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 pb-8 animate-fade-in px-4">
           {[
-            { number: '3+', label: 'Years Experience' },
+            { number: '3.5+', label: 'Years Experience' },
             { number: '30+', label: 'Projects Delivered' },
             { number: '100%', label: 'Client Satisfaction' },
             { number: '5', label: 'Team Members Led' }

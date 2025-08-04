@@ -23,8 +23,8 @@ const ContactSection = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Karlskrona, Sweden',
-      href: 'https://maps.google.com/?q=Karlskrona,Sweden',
+      value: 'Karlskrona, Blekinge, Sweden',
+      href: 'https://maps.google.com/?q=Karlskrona,Blekinge,Sweden',
       color: 'accent'
     }
   ];
@@ -33,8 +33,8 @@ const ContactSection = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/ry-',
-      href: 'https://linkedin.com/in/ry-',
+      value: 'linkedin.com/in/yaswanthrahul',
+      href: 'https://www.linkedin.com/in/yaswanthrahul/',
       color: 'primary'
     },
     {
@@ -231,7 +231,7 @@ const ContactSection = () => {
                     </a>
                   </Button>
                   <Button variant="outline" size="sm" asChild>
-                    <a href="https://linkedin.com/in/ry-" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/yaswanthrahul/" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-4 w-4 mr-2" />
                       LinkedIn Message
                     </a>

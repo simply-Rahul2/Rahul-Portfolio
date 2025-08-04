@@ -25,7 +25,7 @@ const Navigation = () => {
 
   const socialLinks = [
     { href: 'https://github.com/simply-Rahul8', icon: Github, label: 'GitHub' },
-    { href: 'https://linkedin.com/in/ry-', icon: Linkedin, label: 'LinkedIn' },
+    { href: 'https://www.linkedin.com/in/yaswanthrahul/', icon: Linkedin, label: 'LinkedIn' },
     { href: 'mailto:yashwanthrahul5126@gmail.com', icon: Mail, label: 'Email' },
   ];
 
