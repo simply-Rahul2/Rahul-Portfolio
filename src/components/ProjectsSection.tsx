@@ -21,7 +21,7 @@ const ProjectsSection = () => {
       technologies: ['C#', '.NET Core', 'ASP.NET Core', 'Angular', 'SQL Server', 'Entity Framework Core', 'JWT', 'Chart.js', 'NgRx', 'Swagger UI'],
       highlights: ['100% client satisfaction', 'Scalable architecture', 'Real-time features'],
       demoUrl: 'https://taskflow-dev.netlify.app/',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/yourusername/taskflow-management'
     },
     {
       title: 'GamePlan App - Fitness & Retail Management',
@@ -39,7 +39,7 @@ const ProjectsSection = () => {
       technologies: ['React Native', 'Firebase Firestore', 'Firebase Authentication', 'Jest', 'Cypress', 'GPS APIs'],
       highlights: ['5-person team leadership', 'Cross-platform deployment', 'Real-time sync'],
       demoUrl: 'https://gameplan-dev.netlify.app/',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/yourusername/gameplan-app'
     },
     {
       title: 'Dual-LLM Insight Engine',
@@ -56,8 +56,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['Python', 'Node.js', 'LangChain', 'Ollama', 'PostgreSQL', 'Pandas', 'REST APIs'],
       highlights: ['Advanced AI integration', 'Robustness testing', 'Multi-model architecture'],
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: 'https://dual-llm-insight.netlify.app/',
+      githubUrl: 'https://github.com/yourusername/dual-llm-insight-engine'
     },
     {
       title: 'Intelligent Consent Flow for Medical Care',
@@ -75,8 +75,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['Python', 'Streamlit', 'Perplexity AI API', 'Whisper STT', 'gTTS', 'streamlit-drawable-canvas', 'REST APIs'],
       highlights: ['Healthcare AI innovation', 'Privacy-focused design', 'Accessibility compliance', 'Multi-modal interaction'],
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: 'https://medical-consent-flow.streamlit.app/',
+      githubUrl: 'https://github.com/yourusername/intelligent-consent-flow'
     },
     {
       title: '3D Pose Estimation for Fatigue Detection',
@@ -93,8 +93,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['Python', 'TensorFlow/Keras', 'MMPose', 'SemGCN', 'OpenMMLab', 'NumPy', 'SciPy', 'OpenCV'],
       highlights: ['93% accuracy achieved', 'Innovative smartphone approach', 'Academic research'],
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: 'https://pose-fatigue-detection.netlify.app/',
+      githubUrl: 'https://github.com/yourusername/3d-pose-fatigue-detection'
     },
     {
       title: 'Grayscale Image Processor',
@@ -111,8 +111,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['AWS Lambda', 'Python', 'Pillow', 'AWS S3', 'CloudWatch', 'Event-driven architecture'],
       highlights: ['3-person team leadership', 'Serverless deployment', 'Cost-effective scaling'],
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: 'https://grayscale-processor.netlify.app/',
+      githubUrl: 'https://github.com/yourusername/aws-lambda-image-processor'
     },
     {
       title: 'Angular Weather Dashboard',
@@ -129,8 +129,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['AngularJS', 'OpenWeatherMap API', 'HTML5', 'CSS3', 'Local Storage', 'REST APIs'],
       highlights: ['Client satisfaction', 'Responsive design', 'Real-time data'],
-      demoUrl: '#',
-      githubUrl: '#'
+      demoUrl: 'https://angular-weather-dashboard.netlify.app/',
+      githubUrl: 'https://github.com/yourusername/angular-weather-dashboard'
     }
   ];
 
