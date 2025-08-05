@@ -1,3 +1,4 @@
+
 import { ExternalLink, Github, Users, Zap, Brain, Cloud } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -148,6 +149,12 @@ const ProjectsSection = () => {
     return 'primary';
   };
 
+  const handleLinkClick = (url: string) => {
+    if (url && url !== '#') {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -235,32 +242,24 @@ const ProjectsSection = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4 border-t">
-                    {project.githubUrl !== '#' ? (
-                      <Button variant="default" size="sm" className="flex-1" asChild>
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4 mr-2" />
-                          View on GitHub
-                        </a>
-                      </Button>
-                    ) : (
-                      <Button variant="default" size="sm" className="flex-1" disabled>
-                        <Github className="h-4 w-4 mr-2" />
-                        Private Repository
-                      </Button>
-                    )}
-                    {project.demoUrl !== '#' ? (
-                      <Button variant="outline" size="sm" className="flex-1" asChild>
-                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4 mr-2" />
-                          Live Demo
-                        </a>
-                      </Button>
-                    ) : (
-                      <Button variant="outline" size="sm" className="flex-1" disabled>
-                        <ExternalLink className="h-4 w-4 mr-2" />
-                        Demo Unavailable
-                      </Button>
-                    )}
+                    <Button 
+                      variant="default" 
+                      size="sm" 
+                      className="flex-1 cursor-pointer"
+                      onClick={() => handleLinkClick(project.githubUrl)}
+                    >
+                      <Github className="h-4 w-4 mr-2" />
+                      View on GitHub
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="flex-1 cursor-pointer"
+                      onClick={() => handleLinkClick(project.demoUrl)}
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      Live Demo
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
