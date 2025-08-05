@@ -235,18 +235,30 @@ const ProjectsSection = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4 border-t">
-                    <Button variant="default" size="sm" className="flex-1" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                    {project.githubUrl !== '#' ? (
+                      <Button variant="default" size="sm" className="flex-1" asChild>
+                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                          <Github className="h-4 w-4 mr-2" />
+                          View on GitHub
+                        </a>
+                      </Button>
+                    ) : (
+                      <Button variant="default" size="sm" className="flex-1" disabled>
                         <Github className="h-4 w-4 mr-2" />
-                        View on GitHub
-                      </a>
-                    </Button>
-                    {project.demoUrl !== '#' && (
+                        Private Repository
+                      </Button>
+                    )}
+                    {project.demoUrl !== '#' ? (
                       <Button variant="outline" size="sm" className="flex-1" asChild>
                         <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
                           <ExternalLink className="h-4 w-4 mr-2" />
                           Live Demo
                         </a>
+                      </Button>
+                    ) : (
+                      <Button variant="outline" size="sm" className="flex-1" disabled>
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        Demo Unavailable
                       </Button>
                     )}
                   </div>

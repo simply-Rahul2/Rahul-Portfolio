@@ -7,59 +7,59 @@
 /* Modern Portfolio Design System - Yaswanth Rahul */
 @layer base {
   :root {
-    /* Classic White-Brown Wood Finish Colors */
-    --background: 30 40% 98%;
-    --foreground: 25 35% 15%;
+    /* White-Green-Navy Theme */
+    --background: 0 0% 98%;
+    --foreground: 220 15% 20%;
 
-    /* Rich Brown Primary - Dark Wood */
-    --primary: 25 45% 35%;
-    --primary-foreground: 30 40% 98%;
-    --primary-hover: 25 50% 30%;
-    --primary-light: 25 35% 95%;
+    /* Navy Blue Primary */
+    --primary: 220 85% 35%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 220 90% 30%;
+    --primary-light: 220 60% 95%;
 
-    /* Medium Wood Secondary */
-    --secondary: 30 35% 55%;
-    --secondary-foreground: 30 40% 98%;
-    --secondary-hover: 30 40% 50%;
-    --secondary-light: 30 30% 94%;
+    /* Forest Green Secondary */
+    --secondary: 140 60% 35%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 140 65% 30%;
+    --secondary-light: 140 40% 95%;
 
-    /* Light Wood Accent */
-    --accent: 35 30% 75%;
-    --accent-foreground: 25 35% 15%;
-    --accent-hover: 35 35% 70%;
-    --accent-light: 35 25% 96%;
+    /* Emerald Accent */
+    --accent: 160 80% 40%;
+    --accent-foreground: 0 0% 98%;
+    --accent-hover: 160 85% 35%;
+    --accent-light: 160 60% 95%;
 
-    /* Warm Wood Neutrals */
-    --muted: 30 25% 94%;
-    --muted-foreground: 25 20% 45%;
-    --card: 30 35% 97%;
-    --card-foreground: 25 35% 15%;
-    --border: 30 20% 88%;
-    --input: 30 25% 92%;
-    --ring: 25 45% 35%;
+    /* Clean Neutrals */
+    --muted: 0 0% 95%;
+    --muted-foreground: 220 10% 50%;
+    --card: 0 0% 99%;
+    --card-foreground: 220 15% 20%;
+    --border: 220 13% 91%;
+    --input: 0 0% 96%;
+    --ring: 220 85% 35%;
 
-    /* Wood-themed Status Colors */
-    --success: 110 25% 45%;
-    --success-foreground: 30 40% 98%;
-    --warning: 40 60% 50%;
-    --warning-foreground: 30 40% 98%;
-    --destructive: 5 50% 55%;
-    --destructive-foreground: 30 40% 98%;
+    /* Status Colors */
+    --success: 140 60% 40%;
+    --success-foreground: 0 0% 98%;
+    --warning: 45 90% 55%;
+    --warning-foreground: 0 0% 98%;
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
 
-    /* Wood Finish Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(25 45% 35%) 0%, hsl(30 35% 55%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(30 35% 55%) 0%, hsl(35 30% 75%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(35 30% 75%) 0%, hsl(25 45% 35%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(25 45% 35%) 0%, hsl(30 35% 55%) 50%, hsl(35 30% 75%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(30 35% 97%) 0%, hsl(30 25% 94%) 100%);
+    /* Colorful Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(220 85% 35%) 0%, hsl(140 60% 35%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(140 60% 35%) 0%, hsl(160 80% 40%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(160 80% 40%) 0%, hsl(220 85% 35%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 85% 35%) 0%, hsl(140 60% 35%) 50%, hsl(160 80% 40%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 99%) 0%, hsl(0 0% 95%) 100%);
 
-    /* Wood-inspired Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(25 45% 35% / 0.12);
-    --shadow-md: 0 4px 6px -1px hsl(25 45% 35% / 0.15), 0 2px 4px -1px hsl(25 45% 35% / 0.10);
-    --shadow-lg: 0 10px 15px -3px hsl(25 45% 35% / 0.15), 0 4px 6px -2px hsl(25 45% 35% / 0.10);
-    --shadow-xl: 0 20px 25px -5px hsl(25 45% 35% / 0.15), 0 10px 10px -5px hsl(25 45% 35% / 0.08);
-    --shadow-glow: 0 0 30px hsl(25 45% 35% / 0.18);
-    --shadow-hero: 0 20px 40px -12px hsl(25 45% 35% / 0.22);
+    /* Modern Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 85% 35% / 0.12);
+    --shadow-md: 0 4px 6px -1px hsl(220 85% 35% / 0.15), 0 2px 4px -1px hsl(220 85% 35% / 0.10);
+    --shadow-lg: 0 10px 15px -3px hsl(220 85% 35% / 0.15), 0 4px 6px -2px hsl(220 85% 35% / 0.10);
+    --shadow-xl: 0 20px 25px -5px hsl(220 85% 35% / 0.15), 0 10px 10px -5px hsl(220 85% 35% / 0.08);
+    --shadow-glow: 0 0 30px hsl(220 85% 35% / 0.18);
+    --shadow-hero: 0 20px 40px -12px hsl(220 85% 35% / 0.22);
 
     /* Typography */
     --font-size-xs: 0.75rem;
@@ -81,40 +81,40 @@
   }
 
   .dark {
-    /* Dark Wood Theme */
-    --background: 25 30% 12%;
-    --foreground: 35 25% 88%;
+    /* Dark Navy-Green Theme */
+    --background: 220 25% 8%;
+    --foreground: 0 0% 90%;
 
-    /* Dark Wood Primary */
-    --primary: 30 40% 65%;
-    --primary-foreground: 25 30% 12%;
-    --primary-hover: 30 45% 70%;
-    --primary-light: 25 25% 18%;
+    /* Light Navy Primary for Dark Mode */
+    --primary: 220 70% 65%;
+    --primary-foreground: 220 25% 8%;
+    --primary-hover: 220 75% 70%;
+    --primary-light: 220 40% 15%;
 
-    /* Dark Wood Secondary */
-    --secondary: 35 35% 60%;
-    --secondary-foreground: 25 30% 12%;
-    --secondary-hover: 35 40% 65%;
-    --secondary-light: 30 20% 20%;
+    /* Light Green Secondary for Dark Mode */
+    --secondary: 140 50% 60%;
+    --secondary-foreground: 220 25% 8%;
+    --secondary-hover: 140 55% 65%;
+    --secondary-light: 140 30% 18%;
 
-    /* Dark Wood Accent */
-    --accent: 40 30% 70%;
-    --accent-foreground: 25 30% 12%;
-    --accent-hover: 40 35% 75%;
-    --accent-light: 35 25% 22%;
+    /* Light Emerald Accent for Dark Mode */
+    --accent: 160 60% 65%;
+    --accent-foreground: 220 25% 8%;
+    --accent-hover: 160 65% 70%;
+    --accent-light: 160 40% 20%;
 
-    /* Dark Wood Neutrals */
-    --muted: 25 20% 18%;
-    --muted-foreground: 35 15% 65%;
-    --card: 25 25% 15%;
-    --card-foreground: 35 25% 88%;
-    --border: 25 15% 22%;
-    --input: 25 20% 18%;
+    /* Dark Neutrals */
+    --muted: 220 20% 15%;
+    --muted-foreground: 0 0% 65%;
+    --card: 220 25% 10%;
+    --card-foreground: 0 0% 90%;
+    --border: 220 20% 18%;
+    --input: 220 20% 15%;
 
-    /* Dark Wood Gradients */
-    --gradient-card: linear-gradient(145deg, hsl(25 25% 15%) 0%, hsl(25 20% 18%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(30 40% 65%) 0%, hsl(35 35% 60%) 50%, hsl(40 30% 70%) 100%);
-    --shadow-glow: 0 0 30px hsl(30 40% 65% / 0.18);
+    /* Dark Gradients */
+    --gradient-card: linear-gradient(145deg, hsl(220 25% 10%) 0%, hsl(220 20% 15%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(220 70% 65%) 0%, hsl(140 50% 60%) 50%, hsl(160 60% 65%) 100%);
+    --shadow-glow: 0 0 30px hsl(220 70% 65% / 0.18);
   }
 }
 
