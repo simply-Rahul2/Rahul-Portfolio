@@ -1,4 +1,4 @@
-import { Mail, Phone, MapPin, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Linkedin, Github, Download, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -23,8 +23,8 @@ const ContactSection = () => {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Karlskrona, Blekinge, Sweden',
-      href: 'https://maps.google.com/?q=Karlskrona,Blekinge,Sweden',
+      value: 'Karlskrona, Sweden',
+      href: 'https://maps.google.com/?q=Karlskrona,Sweden',
       color: 'accent'
     }
   ];
@@ -33,8 +33,8 @@ const ContactSection = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/yaswanthrahul',
-      href: 'https://www.linkedin.com/in/yaswanthrahul/',
+      value: 'linkedin.com/in/ry-',
+      href: 'https://linkedin.com/in/ry-',
       color: 'primary'
     },
     {
@@ -43,6 +43,13 @@ const ContactSection = () => {
       value: 'github.com/simply-Rahul8',
       href: 'https://github.com/simply-Rahul8',
       color: 'secondary'
+    },
+    {
+      icon: Download,
+      label: 'Portfolio',
+      value: 'View Portfolio Site',
+      href: 'https://simply-rahul8.github.io/Portfolio-RY',
+      color: 'accent'
     }
   ];
 
@@ -68,10 +75,10 @@ const ContactSection = () => {
     <section id="contact" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 animate-gradient-text">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Let's Work Together
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Ready to bring innovative solutions to your team. Open to Stockholm relocation and excited about new opportunities.
           </p>
         </div>
@@ -90,7 +97,7 @@ const ContactSection = () => {
                     href={contact.href}
                     target={contact.href.startsWith('http') ? '_blank' : undefined}
                     rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="flex items-center gap-4 p-4 bg-card rounded-lg border hover:shadow-md transition-all duration-300 group animate-slide-in-right magnetic-hover"
+                    className="flex items-center gap-4 p-4 bg-card rounded-lg border hover:shadow-md transition-all duration-300 group animate-slide-in-right"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className={`p-3 rounded-lg bg-${contact.color}-light group-hover:bg-${contact.color} group-hover:text-${contact.color}-foreground transition-colors`}>
@@ -137,7 +144,7 @@ const ContactSection = () => {
                 {availabilityOptions.map((option, index) => (
                   <div
                     key={option.title}
-                    className="p-4 bg-card rounded-lg border animate-scale-bounce magnetic-hover animate-border-morph"
+                    className="p-4 bg-card rounded-lg border animate-scale-in"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <div className="flex items-center justify-between mb-2">
@@ -208,7 +215,7 @@ const ContactSection = () => {
                     />
                   </div>
 
-                  <Button type="submit" className="w-full group animate-pulse-glow magnetic-hover">
+                  <Button type="submit" className="w-full group">
                     <Send className="h-4 w-4 mr-2 group-hover:animate-pulse" />
                     Send Message
                   </Button>
@@ -231,7 +238,7 @@ const ContactSection = () => {
                     </a>
                   </Button>
                   <Button variant="outline" size="sm" asChild>
-                    <a href="https://www.linkedin.com/in/yaswanthrahul/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://linkedin.com/in/ry-" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-4 w-4 mr-2" />
                       LinkedIn Message
                     </a>
@@ -251,7 +258,11 @@ const ContactSection = () => {
               I'm ready to contribute to your team's success from day one.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+              <Button size="lg" className="shadow-lg hover:shadow-xl transition-all duration-300">
+                <Download className="h-5 w-5 mr-2" />
+                Download My Resume
+              </Button>
+              <Button variant="outline" size="lg">
                 <Mail className="h-5 w-5 mr-2" />
                 Schedule a Call
               </Button>

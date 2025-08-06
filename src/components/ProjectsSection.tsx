@@ -149,7 +149,7 @@ const ProjectsSection = () => {
             return (
               <Card
                 key={project.title}
-                className="group hover:shadow-xl transition-all duration-500 border-l-4 border-l-primary animate-fade-in-up h-full magnetic-hover animate-border-morph"
+                className="group hover:shadow-xl transition-all duration-500 border-l-4 border-l-primary animate-fade-in-up h-full"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader>
@@ -167,7 +167,7 @@ const ProjectsSection = () => {
                     </div>
                   </div>
                   
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors animate-gradient-text">
+                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
                     {project.title}
                   </CardTitle>
                   
