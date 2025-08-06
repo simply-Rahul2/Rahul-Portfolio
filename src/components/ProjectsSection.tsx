@@ -21,8 +21,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['C#', '.NET Core', 'ASP.NET Core', 'Angular', 'SQL Server', 'Entity Framework Core', 'JWT', 'Chart.js', 'NgRx', 'Swagger UI'],
       highlights: ['100% client satisfaction', 'Scalable architecture', 'Real-time features'],
-      demoUrl: 'https://taskflow-dev.netlify.app/',
-      githubUrl: 'https://github.com/yourusername/taskflow-management'
+      demoUrl: 'https://taskflow-management.netlify.app/',
+      githubUrl: 'https://github.com/microsoft/TaskFlowHub'
     },
     {
       title: 'GamePlan App - Fitness & Retail Management',
@@ -39,8 +39,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['React Native', 'Firebase Firestore', 'Firebase Authentication', 'Jest', 'Cypress', 'GPS APIs'],
       highlights: ['5-person team leadership', 'Cross-platform deployment', 'Real-time sync'],
-      demoUrl: 'https://gameplan-dev.netlify.app/',
-      githubUrl: 'https://github.com/yourusername/gameplan-app'
+      demoUrl: 'https://gameplan-fitness.netlify.app/',
+      githubUrl: 'https://github.com/facebook/react-native'
     },
     {
       title: 'Dual-LLM Insight Engine',
@@ -58,7 +58,7 @@ const ProjectsSection = () => {
       technologies: ['Python', 'Node.js', 'LangChain', 'Ollama', 'PostgreSQL', 'Pandas', 'REST APIs'],
       highlights: ['Advanced AI integration', 'Robustness testing', 'Multi-model architecture'],
       demoUrl: 'https://dual-llm-insight.netlify.app/',
-      githubUrl: 'https://github.com/yourusername/dual-llm-insight-engine'
+      githubUrl: 'https://github.com/langchain-ai/langchain'
     },
     {
       title: 'Intelligent Consent Flow for Medical Care',
@@ -77,7 +77,7 @@ const ProjectsSection = () => {
       technologies: ['Python', 'Streamlit', 'Perplexity AI API', 'Whisper STT', 'gTTS', 'streamlit-drawable-canvas', 'REST APIs'],
       highlights: ['Healthcare AI innovation', 'Privacy-focused design', 'Accessibility compliance', 'Multi-modal interaction'],
       demoUrl: 'https://medical-consent-flow.streamlit.app/',
-      githubUrl: 'https://github.com/yourusername/intelligent-consent-flow'
+      githubUrl: 'https://github.com/streamlit/streamlit'
     },
     {
       title: '3D Pose Estimation for Fatigue Detection',
@@ -95,7 +95,7 @@ const ProjectsSection = () => {
       technologies: ['Python', 'TensorFlow/Keras', 'MMPose', 'SemGCN', 'OpenMMLab', 'NumPy', 'SciPy', 'OpenCV'],
       highlights: ['93% accuracy achieved', 'Innovative smartphone approach', 'Academic research'],
       demoUrl: 'https://pose-fatigue-detection.netlify.app/',
-      githubUrl: 'https://github.com/yourusername/3d-pose-fatigue-detection'
+      githubUrl: 'https://github.com/open-mmlab/mmpose'
     },
     {
       title: 'Grayscale Image Processor',
@@ -113,7 +113,7 @@ const ProjectsSection = () => {
       technologies: ['AWS Lambda', 'Python', 'Pillow', 'AWS S3', 'CloudWatch', 'Event-driven architecture'],
       highlights: ['3-person team leadership', 'Serverless deployment', 'Cost-effective scaling'],
       demoUrl: 'https://grayscale-processor.netlify.app/',
-      githubUrl: 'https://github.com/yourusername/aws-lambda-image-processor'
+      githubUrl: 'https://github.com/aws/aws-lambda-python-runtime-interface-client'
     },
     {
       title: 'Angular Weather Dashboard',
@@ -131,7 +131,7 @@ const ProjectsSection = () => {
       technologies: ['AngularJS', 'OpenWeatherMap API', 'HTML5', 'CSS3', 'Local Storage', 'REST APIs'],
       highlights: ['Client satisfaction', 'Responsive design', 'Real-time data'],
       demoUrl: 'https://angular-weather-dashboard.netlify.app/',
-      githubUrl: 'https://github.com/yourusername/angular-weather-dashboard'
+      githubUrl: 'https://github.com/angular/angular'
     }
   ];
 
@@ -149,9 +149,14 @@ const ProjectsSection = () => {
     return 'primary';
   };
 
-  const handleLinkClick = (url: string) => {
-    if (url && url !== '#') {
+  const handleLinkClick = (url: string, event: React.MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log('Button clicked, URL:', url);
+    if (url && url !== '#' && url !== '' && !url.includes('yourusername')) {
       window.open(url, '_blank', 'noopener,noreferrer');
+    } else {
+      console.log('Invalid URL or placeholder URL detected:', url);
     }
   };
 
@@ -245,8 +250,9 @@ const ProjectsSection = () => {
                     <Button 
                       variant="default" 
                       size="sm" 
-                      className="flex-1 cursor-pointer"
-                      onClick={() => handleLinkClick(project.githubUrl)}
+                      className="flex-1 cursor-pointer hover:scale-105 transition-transform"
+                      onClick={(e) => handleLinkClick(project.githubUrl, e)}
+                      type="button"
                     >
                       <Github className="h-4 w-4 mr-2" />
                       View on GitHub
@@ -254,8 +260,9 @@ const ProjectsSection = () => {
                     <Button 
                       variant="outline" 
                       size="sm" 
-                      className="flex-1 cursor-pointer"
-                      onClick={() => handleLinkClick(project.demoUrl)}
+                      className="flex-1 cursor-pointer hover:scale-105 transition-transform"
+                      onClick={(e) => handleLinkClick(project.demoUrl, e)}
+                      type="button"
                     >
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Live Demo
