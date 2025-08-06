@@ -42,6 +42,24 @@ const ProjectsSection = () => {
       githubUrl: '#'
     },
     {
+      title: 'Intelligent Consent Flow for Medical Care',
+      description: 'AI-powered conversational system that streamlines and humanizes the medical consent process using speech technologies and natural language processing.',
+      category: 'AI/Generative AI Project',
+      icon: Brain,
+      scale: 'Prototype/Demo-ready',
+      features: [
+        'Converts medical notes/ICD-10/CPT codes to patient-friendly summaries',
+        'Interactive patient Q&A via text or voice with context-aware AI',
+        'Accessibility via instant audio playback (TTS) for summaries',
+        'Captures consent through verified audio or digital signature',
+        'Privacy-first architecture with minimal logging'
+      ],
+      technologies: ['Python', 'Streamlit', 'Perplexity AI API', 'Whisper STT', 'gTTS', 'streamlit-drawable-canvas', 'REST APIs'],
+      highlights: ['Modernized consent workflow', 'Enhanced accessibility', 'Privacy-first design'],
+      demoUrl: '#',
+      githubUrl: 'https://github.com/simply-Rahul8/Intelligent-medical-Assista'
+    },
+    {
       title: 'Dual-LLM Insight Engine',
       description: 'AI chatbot with RAG implementation for intelligent query processing and response generation using multiple language models.',
       category: 'AI/ML Project',
@@ -123,7 +141,7 @@ const ProjectsSection = () => {
   };
 
   const getCategoryColor = (category: string) => {
-    if (category.includes('AI') || category.includes('Research')) return 'secondary';
+    if (category.includes('AI') || category.includes('Research') || category.includes('Generative')) return 'secondary';
     if (category.includes('Cloud')) return 'accent';
     if (category.includes('Team')) return 'primary';
     return 'primary';

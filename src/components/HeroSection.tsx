@@ -14,12 +14,12 @@ const HeroSection = () => {
         <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col justify-center min-h-screen">
-        <div className="text-center animate-fade-in-up flex flex-col justify-center min-h-[80vh]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="text-center animate-fade-in-up min-h-screen flex flex-col justify-center">
 
-          {/* Name - Centered with 4cm spacing */}
-          <div className="flex-1 flex items-center justify-center pt-24">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight">
+          {/* Name - Properly centered */}
+          <div className="mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight px-2">
               Yaswanth Rahul
               <br />
               Yarlagadda
@@ -27,16 +27,16 @@ const HeroSection = () => {
           </div>
 
           {/* Content Below Name */}
-          <div className="space-y-8">
+          <div className="space-y-6 md:space-y-8">
             {/* Title */}
-            <p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
               <span className="text-accent font-semibold">Recent Graduate</span> & Dynamic <span className="text-primary font-semibold">Full-Stack Developer</span> with{' '}
               <span className="text-secondary font-semibold">3+ years</span> of experience building scalable,{' '}
               <span className="text-accent font-semibold">AI-enhanced</span> applications
             </p>
 
             {/* Skills Highlight */}
-            <div className="flex flex-wrap justify-center gap-3 text-sm md:text-base">
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base px-4">
               {[
                 'GenAI & Prompt Engineering',
                 'React & Angular',
@@ -46,7 +46,7 @@ const HeroSection = () => {
               ].map((skill, index) => (
                 <span
                   key={skill}
-                  className="px-4 py-2 bg-card/80 backdrop-blur-sm rounded-full border text-muted-foreground animate-scale-in"
+                  className="px-3 sm:px-4 py-2 bg-card/80 backdrop-blur-sm rounded-full border text-muted-foreground animate-scale-in"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {skill}
@@ -55,23 +55,23 @@ const HeroSection = () => {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button size="lg" className="group shadow-hero hover:shadow-glow transition-all duration-300">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+              <Button size="lg" className="group shadow-hero hover:shadow-glow transition-all duration-300 w-full sm:w-auto">
                 <Download className="h-5 w-5 mr-2 group-hover:animate-pulse" />
                 Download Resume
               </Button>
-              <Button variant="outline" size="lg" className="group">
+              <Button variant="outline" size="lg" className="group w-full sm:w-auto">
                 <Mail className="h-5 w-5 mr-2 group-hover:animate-pulse" />
                 Get In Touch
               </Button>
             </div>
 
             {/* Location & Availability */}
-            <div className="text-muted-foreground">
+            <div className="text-muted-foreground px-4">
               <p className="text-sm md:text-base">
                 📍 Karlskrona, Sweden • 🌍 Open to Stockholm relocation
               </p>
-              <p className="text-sm">
+              <p className="text-xs sm:text-sm">
                 🚀 Currently exploring opportunities for full-time positions in Sweden
               </p>
             </div>
@@ -88,8 +88,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Stats - Fixed at bottom */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-8 animate-fade-in">
+        {/* Stats - At bottom */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 pt-8 animate-fade-in px-4">
           {[
             { number: '3+', label: 'Years Experience' },
             { number: '30+', label: 'Projects Delivered' },
@@ -98,13 +98,13 @@ const HeroSection = () => {
           ].map((stat, index) => (
             <div
               key={stat.label}
-              className="text-center p-6 bg-card/50 backdrop-blur-sm rounded-lg border animate-scale-in"
+              className="text-center p-3 sm:p-4 md:p-6 bg-card/50 backdrop-blur-sm rounded-lg border animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-2">
+              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">
                 {stat.number}
               </div>
-              <div className="text-sm text-muted-foreground">
+              <div className="text-xs sm:text-sm text-muted-foreground">
                 {stat.label}
               </div>
             </div>
