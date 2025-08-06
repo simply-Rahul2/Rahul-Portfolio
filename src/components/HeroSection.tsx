@@ -15,10 +15,10 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center animate-fade-in-up min-h-screen flex flex-col justify-center">
+        <div className="text-center animate-fade-in-up min-h-screen flex flex-col justify-center pt-20">
 
-          {/* Name - Properly centered */}
-          <div className="mb-8">
+          {/* Name - Properly centered with notable space from header */}
+          <div className="mb-8 mt-16 sm:mt-20 md:mt-24">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight px-2">
               Yaswanth Rahul
               <br />
@@ -88,8 +88,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Stats - At bottom */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 pt-8 animate-fade-in px-4">
+        {/* Stats - At bottom with proper spacing */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 pt-8 pb-16 animate-fade-in px-4">
           {[
             { number: '3+', label: 'Years Experience' },
             { number: '30+', label: 'Projects Delivered' },
