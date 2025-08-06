@@ -1,4 +1,3 @@
-
 import { ExternalLink, Github, Users, Zap, Brain, Cloud } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -21,8 +20,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['C#', '.NET Core', 'ASP.NET Core', 'Angular', 'SQL Server', 'Entity Framework Core', 'JWT', 'Chart.js', 'NgRx', 'Swagger UI'],
       highlights: ['100% client satisfaction', 'Scalable architecture', 'Real-time features'],
-      demoUrl: 'https://taskflow-management.netlify.app/',
-      githubUrl: 'https://github.com/microsoft/TaskFlowHub'
+      demoUrl: 'https://taskflow-dev.netlify.app/',
+      githubUrl: '#'
     },
     {
       title: 'GamePlan App - Fitness & Retail Management',
@@ -39,8 +38,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['React Native', 'Firebase Firestore', 'Firebase Authentication', 'Jest', 'Cypress', 'GPS APIs'],
       highlights: ['5-person team leadership', 'Cross-platform deployment', 'Real-time sync'],
-      demoUrl: 'https://gameplan-fitness.netlify.app/',
-      githubUrl: 'https://github.com/facebook/react-native'
+      demoUrl: 'https://gameplan-dev.netlify.app/',
+      githubUrl: '#'
     },
     {
       title: 'Dual-LLM Insight Engine',
@@ -57,27 +56,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['Python', 'Node.js', 'LangChain', 'Ollama', 'PostgreSQL', 'Pandas', 'REST APIs'],
       highlights: ['Advanced AI integration', 'Robustness testing', 'Multi-model architecture'],
-      demoUrl: 'https://dual-llm-insight.netlify.app/',
-      githubUrl: 'https://github.com/langchain-ai/langchain'
-    },
-    {
-      title: 'Intelligent Consent Flow for Medical Care',
-      description: 'AI-powered healthcare solution that streamlines and humanizes medical consent processes using conversational AI, speech technology, and digital signature capture.',
-      category: 'AI/Healthcare Project',
-      icon: Brain,
-      scale: 'Prototype/Demo-ready',
-      features: [
-        'Converts medical notes/ICD-10/CPT codes to plain-English summaries',
-        'Interactive patient Q&A via text or voice interface',
-        'Accessibility features with instant audio playback (TTS)',
-        'Digital signature capture for verified consent',
-        'Privacy-first architecture with minimal data logging',
-        'Multi-modal consent capture (audio/digital signature)'
-      ],
-      technologies: ['Python', 'Streamlit', 'Perplexity AI API', 'Whisper STT', 'gTTS', 'streamlit-drawable-canvas', 'REST APIs'],
-      highlights: ['Healthcare AI innovation', 'Privacy-focused design', 'Accessibility compliance', 'Multi-modal interaction'],
-      demoUrl: 'https://medical-consent-flow.streamlit.app/',
-      githubUrl: 'https://github.com/streamlit/streamlit'
+      demoUrl: '#',
+      githubUrl: '#'
     },
     {
       title: '3D Pose Estimation for Fatigue Detection',
@@ -94,8 +74,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['Python', 'TensorFlow/Keras', 'MMPose', 'SemGCN', 'OpenMMLab', 'NumPy', 'SciPy', 'OpenCV'],
       highlights: ['93% accuracy achieved', 'Innovative smartphone approach', 'Academic research'],
-      demoUrl: 'https://pose-fatigue-detection.netlify.app/',
-      githubUrl: 'https://github.com/open-mmlab/mmpose'
+      demoUrl: '#',
+      githubUrl: '#'
     },
     {
       title: 'Grayscale Image Processor',
@@ -112,8 +92,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['AWS Lambda', 'Python', 'Pillow', 'AWS S3', 'CloudWatch', 'Event-driven architecture'],
       highlights: ['3-person team leadership', 'Serverless deployment', 'Cost-effective scaling'],
-      demoUrl: 'https://grayscale-processor.netlify.app/',
-      githubUrl: 'https://github.com/aws/aws-lambda-python-runtime-interface-client'
+      demoUrl: '#',
+      githubUrl: '#'
     },
     {
       title: 'Angular Weather Dashboard',
@@ -130,8 +110,8 @@ const ProjectsSection = () => {
       ],
       technologies: ['AngularJS', 'OpenWeatherMap API', 'HTML5', 'CSS3', 'Local Storage', 'REST APIs'],
       highlights: ['Client satisfaction', 'Responsive design', 'Real-time data'],
-      demoUrl: 'https://angular-weather-dashboard.netlify.app/',
-      githubUrl: 'https://github.com/angular/angular'
+      demoUrl: '#',
+      githubUrl: '#'
     }
   ];
 
@@ -147,17 +127,6 @@ const ProjectsSection = () => {
     if (category.includes('Cloud')) return 'accent';
     if (category.includes('Team')) return 'primary';
     return 'primary';
-  };
-
-  const handleLinkClick = (url: string, event: React.MouseEvent) => {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log('Button clicked, URL:', url);
-    if (url && url !== '#' && url !== '' && !url.includes('yourusername')) {
-      window.open(url, '_blank', 'noopener,noreferrer');
-    } else {
-      console.log('Invalid URL or placeholder URL detected:', url);
-    }
   };
 
   return (
@@ -247,26 +216,20 @@ const ProjectsSection = () => {
 
                   {/* Action Buttons */}
                   <div className="flex gap-3 pt-4 border-t">
-                    <Button 
-                      variant="default" 
-                      size="sm" 
-                      className="flex-1 cursor-pointer hover:scale-105 transition-transform"
-                      onClick={(e) => handleLinkClick(project.githubUrl, e)}
-                      type="button"
-                    >
-                      <Github className="h-4 w-4 mr-2" />
-                      View on GitHub
+                    <Button variant="default" size="sm" className="flex-1" asChild>
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4 mr-2" />
+                        View on GitHub
+                      </a>
                     </Button>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="flex-1 cursor-pointer hover:scale-105 transition-transform"
-                      onClick={(e) => handleLinkClick(project.demoUrl, e)}
-                      type="button"
-                    >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
-                    </Button>
+                    {project.demoUrl !== '#' && (
+                      <Button variant="outline" size="sm" className="flex-1" asChild>
+                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="h-4 w-4 mr-2" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    )}
                   </div>
                 </CardContent>
               </Card>
