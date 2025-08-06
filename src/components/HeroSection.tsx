@@ -18,7 +18,7 @@ const HeroSection = () => {
         <div className="text-center animate-fade-in-up min-h-screen flex flex-col justify-center pt-20">
 
           {/* Name - Properly centered with notable space from header */}
-          <div className="mb-8 mt-16 sm:mt-20 md:mt-24">
+          <div className="mb-8 mt-32 sm:mt-36 md:mt-40">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight px-2">
               Yaswanth Rahul
               <br />
