@@ -75,7 +75,7 @@ const ProjectsSection = () => {
       technologies: ['Streamlit', 'Python', 'LangChain', 'Ollama', 'FAISS', 'PyPDF2'],
       highlights: ['Privacy-preserving design', 'Local infrastructure', 'RAG technology integration'],
       demoUrl: '#',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/simply-Rahul8/Personal-chatbot.git'
     },
     {
       title: 'Dual-LLM Insight Engine',
