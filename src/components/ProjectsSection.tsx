@@ -60,6 +60,24 @@ const ProjectsSection = () => {
       githubUrl: 'https://github.com/simply-Rahul8/Intelligent-medical-Assista'
     },
     {
+      title: 'Personal Data Chatbot with Streamlit, RAG, Ollama, and LangChain',
+      description: 'Privacy-preserving chatbot with Retrieval-Augmented Generation (RAG) for secure natural language querying of personal documents on local infrastructure.',
+      category: 'AI/ML Project',
+      icon: Brain,
+      scale: 'Prototype / Personal use',
+      features: [
+        'Full document ingestion without filtering for personal data handling',
+        'Multi-turn chat with persistent session state',
+        'Green dot UI indicator for successful document processing',
+        'Enhanced UI with improved font size and upload margins',
+        'Secure local infrastructure with no external data sharing'
+      ],
+      technologies: ['Streamlit', 'Python', 'LangChain', 'Ollama', 'FAISS', 'PyPDF2'],
+      highlights: ['Privacy-preserving design', 'Local infrastructure', 'RAG technology integration'],
+      demoUrl: '#',
+      githubUrl: '#'
+    },
+    {
       title: 'Dual-LLM Insight Engine',
       description: 'AI chatbot with RAG implementation for intelligent query processing and response generation using multiple language models.',
       category: 'AI/ML Project',
