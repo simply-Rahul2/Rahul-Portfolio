@@ -177,7 +177,7 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
           {projects.map((project, index) => {
             const CategoryIcon = getCategoryIcon(project.category);
             const categoryColor = getCategoryColor(project.category);
@@ -188,13 +188,13 @@ const ProjectsSection = () => {
                 className="group hover:shadow-xl transition-all duration-500 border-l-4 border-l-primary animate-fade-in-up h-full"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardHeader>
-                  <div className="flex items-start justify-between mb-4">
-                    <div className={`p-3 rounded-lg bg-${categoryColor}-light`}>
-                      <CategoryIcon className={`h-6 w-6 text-${categoryColor}`} />
+                <CardHeader className="pb-4">
+                  <div className="flex items-start justify-between mb-3">
+                    <div className={`p-2 rounded-lg bg-${categoryColor}-light`}>
+                      <CategoryIcon className={`h-5 w-5 text-${categoryColor}`} />
                     </div>
-                    <div className="flex items-center gap-2">
-                      <Badge variant="outline" className={`border-${categoryColor} text-${categoryColor}`}>
+                    <div className="flex items-center gap-1">
+                      <Badge variant="outline" className={`border-${categoryColor} text-${categoryColor} text-xs`}>
                         {project.category}
                       </Badge>
                       <Badge variant="secondary" className="text-xs">
@@ -203,22 +203,22 @@ const ProjectsSection = () => {
                     </div>
                   </div>
                   
-                  <CardTitle className="text-xl group-hover:text-primary transition-colors">
+                  <CardTitle className="text-lg group-hover:text-primary transition-colors">
                     {project.title}
                   </CardTitle>
                   
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-sm">
                     {project.description}
                   </p>
                 </CardHeader>
                 
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4 pt-0">
                   {/* Key Features */}
                   <div>
-                    <h4 className="font-medium mb-3 text-foreground">Key Features:</h4>
-                    <ul className="space-y-2">
-                      {project.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start gap-2 text-sm text-muted-foreground">
+                    <h4 className="font-medium mb-2 text-foreground text-sm">Key Features:</h4>
+                    <ul className="space-y-1">
+                      {project.features.slice(0, 3).map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start gap-2 text-xs text-muted-foreground">
                           <span className="text-primary mt-1 text-xs flex-shrink-0">•</span>
                           {feature}
                         </li>
@@ -228,22 +228,27 @@ const ProjectsSection = () => {
 
                   {/* Technologies */}
                   <div>
-                    <h4 className="font-medium mb-3 text-foreground">Technologies Used:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs">
+                    <h4 className="font-medium mb-2 text-foreground text-sm">Technologies:</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {project.technologies.slice(0, 4).map((tech) => (
+                        <Badge key={tech} variant="outline" className="text-xs px-2 py-0">
                           {tech}
                         </Badge>
                       ))}
+                      {project.technologies.length > 4 && (
+                        <Badge variant="outline" className="text-xs px-2 py-0">
+                          +{project.technologies.length - 4}
+                        </Badge>
+                      )}
                     </div>
                   </div>
 
                   {/* Highlights */}
                   <div>
-                    <h4 className="font-medium mb-3 text-foreground">Project Highlights:</h4>
-                    <div className="flex flex-wrap gap-2">
+                    <h4 className="font-medium mb-2 text-foreground text-sm">Highlights:</h4>
+                    <div className="flex flex-wrap gap-1">
                       {project.highlights.map((highlight) => (
-                        <Badge key={highlight} className={`text-xs bg-${categoryColor} text-${categoryColor}-foreground`}>
+                        <Badge key={highlight} className={`text-xs bg-${categoryColor} text-${categoryColor}-foreground px-2 py-0`}>
                           {highlight}
                         </Badge>
                       ))}
@@ -251,7 +256,7 @@ const ProjectsSection = () => {
                   </div>
 
                   {/* Action Buttons */}
-                  <div className="flex gap-3 pt-4 border-t">
+                  <div className="flex gap-2 pt-3 border-t">
                     <Button variant="default" size="sm" className="flex-1" asChild>
                       <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                         <Github className="h-4 w-4 mr-2" />
