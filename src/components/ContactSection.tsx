@@ -33,8 +33,8 @@ const ContactSection = () => {
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      value: 'linkedin.com/in/ry-',
-      href: 'https://linkedin.com/in/ry-',
+      value: 'linkedin.com/in/yaswanthrahul',
+      href: 'https://linkedin.com/in/yaswanthrahul',
       color: 'primary'
     },
     {
@@ -48,7 +48,7 @@ const ContactSection = () => {
       icon: Download,
       label: 'Portfolio',
       value: 'View Portfolio Site',
-      href: 'https://simply-rahul8.github.io/Portfolio-RY',
+      href: 'https://glittering-crisp-2a0fc9.netlify.app/',
       color: 'accent'
     }
   ];
@@ -238,7 +238,7 @@ const ContactSection = () => {
                     </a>
                   </Button>
                   <Button variant="outline" size="sm" asChild>
-                    <a href="https://linkedin.com/in/ry-" target="_blank" rel="noopener noreferrer">
+                    <a href="https://linkedin.com/in/yaswanthrahul" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-4 w-4 mr-2" />
                       LinkedIn Message
                     </a>

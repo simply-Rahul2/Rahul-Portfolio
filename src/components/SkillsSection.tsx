@@ -20,7 +20,8 @@ const SkillsSection = () => {
         { name: 'TypeScript', level: 'Proficient', experience: '3+ years' },
         { name: 'JavaScript (ES6+)', level: 'Proficient', experience: '4+ years' },
         { name: 'HTML5 & CSS3', level: 'Proficient', experience: '4+ years' },
-        { name: 'React Native', level: 'Proficient', experience: '1+ years (GamePlan App)' }
+        { name: 'React Native', level: 'Proficient', experience: '1+ years (GamePlan App)' },
+        { name: 'Kotlin', level: 'Proficient', experience: '1+ years (Food Recipe App)' }
       ]
     },
     backend: {
@@ -213,6 +214,14 @@ const SkillsSection = () => {
           <h3 className="text-2xl font-bold text-center mb-8">Certifications & Learning</h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
+              'Docker for Developers',
+              'Learning Kubernetes',
+              'Learning C#',
+              'C# and .NET Essential Training',
+              'Backend Development',
+              'Backend Web Development with .NET',
+              'Become a Full Stack Web Developer',
+              'Generative AI for Web Developers',
               'Microsoft: Building AI Agents for Beginners (2025)',
               'Microsoft Azure Fundamentals (2023)',
               'Full-Stack Web Development (LinkedIn Learning)',
@@ -244,7 +253,8 @@ const SkillsSection = () => {
               'GraphQL',
               'Contentful CMS',
               'ClickHouse',
-              'Apache Superset',
+              'Apache Superset', 
+              'Dagster',
               'Elasticsearch',
               'MLOps (MLflow, Kubeflow)'
             ].map((tech) => (

@@ -132,6 +132,42 @@ const ProjectsSection = () => {
       githubUrl: '#'
     },
     {
+      title: 'COVID-19 Data Analysis Dashboard',
+      description: 'Team-led data analytics dashboard providing real-time COVID-19 insights with interactive visualizations and comprehensive data processing capabilities.',
+      category: 'Team Project (Lead)',
+      icon: Users,
+      scale: '3-person team',
+      features: [
+        'Real-time COVID-19 data monitoring and analysis',
+        'Interactive data visualizations with Matplotlib',
+        'Responsive web dashboard for stakeholders',
+        'Advanced data preprocessing and validation',
+        'Team leadership and project coordination'
+      ],
+      technologies: ['Flask', 'Python', 'NumPy', 'Pandas', 'Matplotlib', 'Figma', 'Git'],
+      highlights: ['Team leadership', 'Data analytics expertise', 'Stakeholder-focused design'],
+      demoUrl: '#',
+      githubUrl: '#'
+    },
+    {
+      title: 'Microservices-based Online Food Ordering System',
+      description: 'Enterprise-grade microservices architecture with separate services for users, menu, orders, and payments, deployed using modern containerization.',
+      category: 'Enterprise Project',
+      icon: Cloud,
+      scale: 'Microservices architecture',
+      features: [
+        'Split services: User, Menu, Order, Payment Services',
+        'API Gateway for service orchestration',
+        'Inter-service communication via gRPC/REST',
+        'Docker and Kubernetes deployment',
+        'Scalable enterprise architecture'
+      ],
+      technologies: ['.NET Core', 'Microservices', 'API Gateway', 'gRPC', 'REST APIs', 'Docker', 'Kubernetes'],
+      highlights: ['Microservices design', 'Enterprise scalability', 'Modern deployment'],
+      demoUrl: '#',
+      githubUrl: '#'
+    },
+    {
       title: 'Angular Weather Dashboard',
       description: 'Real-time weather application serving 100+ users with responsive design and comprehensive weather data visualization.',
       category: 'Freelance Project',
