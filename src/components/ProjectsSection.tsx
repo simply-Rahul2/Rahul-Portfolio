@@ -58,6 +58,7 @@ const ProjectsSection = () => {
       highlights: ['Modernized consent workflow', 'Enhanced accessibility', 'Privacy-first design'],
       demoUrl: '#',
       githubUrl: 'https://github.com/simply-Rahul8/Intelligent-medical-Assista.git'
+
     },
     {
       title: 'Personal Data Chatbot with Streamlit, RAG, Ollama, and LangChain',
