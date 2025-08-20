@@ -21,7 +21,7 @@ const ProjectsSection = () => {
       technologies: ['C#', '.NET Core', 'ASP.NET Core', 'Angular', 'SQL Server', 'Entity Framework Core', 'JWT', 'Chart.js', 'NgRx', 'Swagger UI'],
       highlights: ['100% client satisfaction', 'Scalable architecture', 'Real-time features'],
       demoUrl: 'https://taskflow-dev.netlify.app/',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/simply-Rahul8/TAskFlow.git'
     },
     {
       title: 'GamePlan App - Fitness & Retail Management',
@@ -39,7 +39,7 @@ const ProjectsSection = () => {
       technologies: ['React Native', 'Firebase Firestore', 'Firebase Authentication', 'Jest', 'Cypress', 'GPS APIs'],
       highlights: ['5-person team leadership', 'Cross-platform deployment', 'Real-time sync'],
       demoUrl: 'https://gameplan-dev.netlify.app/',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/simply-Rahul8/GamePlanApp.git'
     },
     {
       title: 'Intelligent Consent Flow for Medical Care',
@@ -57,7 +57,8 @@ const ProjectsSection = () => {
       technologies: ['Python', 'Streamlit', 'Perplexity AI API', 'Whisper STT', 'gTTS', 'streamlit-drawable-canvas', 'REST APIs'],
       highlights: ['Modernized consent workflow', 'Enhanced accessibility', 'Privacy-first design'],
       demoUrl: '#',
-      githubUrl: 'https://github.com/simply-Rahul8/Intelligent-medical-Assista'
+      githubUrl: 'https://github.com/simply-Rahul8/Intelligent-medical-Assista.git'
+
     },
     {
       title: 'Personal Data Chatbot with Streamlit, RAG, Ollama, and LangChain',
@@ -93,7 +94,7 @@ const ProjectsSection = () => {
       technologies: ['Python', 'Node.js', 'LangChain', 'Ollama', 'PostgreSQL', 'Pandas', 'REST APIs'],
       highlights: ['Advanced AI integration', 'Robustness testing', 'Multi-model architecture'],
       demoUrl: '#',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/simply-Rahul8/Dual-LLM-RAG-based-Pipeline.git'
     },
     {
       title: '3D Pose Estimation for Fatigue Detection',
@@ -111,7 +112,7 @@ const ProjectsSection = () => {
       technologies: ['Python', 'TensorFlow/Keras', 'MMPose', 'SemGCN', 'OpenMMLab', 'NumPy', 'SciPy', 'OpenCV'],
       highlights: ['93% accuracy achieved', 'Innovative smartphone approach', 'Academic research'],
       demoUrl: '#',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/simply-Rahul8/3D-pose-estimation.git'
     },
     {
       title: 'Grayscale Image Processor',
@@ -129,7 +130,7 @@ const ProjectsSection = () => {
       technologies: ['AWS Lambda', 'Python', 'Pillow', 'AWS S3', 'CloudWatch', 'Event-driven architecture'],
       highlights: ['3-person team leadership', 'Serverless deployment', 'Cost-effective scaling'],
       demoUrl: '#',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/simply-Rahul8/Grayscale-Image-Processor.git'
     },
     {
       title: 'COVID-19 Data Analysis Dashboard',
@@ -147,7 +148,7 @@ const ProjectsSection = () => {
       technologies: ['Flask', 'Python', 'NumPy', 'Pandas', 'Matplotlib', 'Figma', 'Git'],
       highlights: ['Team leadership', 'Data analytics expertise', 'Stakeholder-focused design'],
       demoUrl: '#',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/simply-Rahul8/COVID-19-Data-Visualization-tool.git'
     },
     {
       title: 'Microservices-based Online Food Ordering System',
@@ -165,7 +166,7 @@ const ProjectsSection = () => {
       technologies: ['.NET Core', 'Microservices', 'API Gateway', 'gRPC', 'REST APIs', 'Docker', 'Kubernetes'],
       highlights: ['Microservices design', 'Enterprise scalability', 'Modern deployment'],
       demoUrl: '#',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/simply-Rahul8/Micro-services-Ordering-system.git'
     },
     {
       title: 'Angular Weather Dashboard',
@@ -183,7 +184,7 @@ const ProjectsSection = () => {
       technologies: ['AngularJS', 'OpenWeatherMap API', 'HTML5', 'CSS3', 'Local Storage', 'REST APIs'],
       highlights: ['Client satisfaction', 'Responsive design', 'Real-time data'],
       demoUrl: '#',
-      githubUrl: '#'
+      githubUrl: 'https://github.com/simply-Rahul8/Angular-Weather-forecaster.git'
     }
   ];
 
