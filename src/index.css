@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Modern Portfolio Design System - Yaswanth Rahul */
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 240 15% 10%;
+
+    /* Brand Primary - Ocean Blue */
+    --primary: 210 98% 45%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 210 98% 40%;
+    --primary-light: 210 98% 95%;
+
+    /* Secondary - Purple */
+    --secondary: 270 85% 55%;
+    --secondary-foreground: 0 0% 98%;
+    --secondary-hover: 270 85% 50%;
+    --secondary-light: 270 85% 95%;
+
+    /* Accent - Coral Pink */
+    --accent: 340 85% 65%;
+    --accent-foreground: 0 0% 15%;
+    --accent-hover: 340 85% 60%;
+    --accent-light: 340 85% 95%;
+
+    /* Neutrals */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --card: 0 0% 100%;
+    --card-foreground: 225 39% 10%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+
+    /* Status Colors */
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)) 0%, hsl(var(--accent)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)) 0%, hsl(var(--primary)) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 98% 45%) 0%, hsl(270 85% 55%) 50%, hsl(340 85% 65%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(210 98% 98%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(var(--primary) / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(var(--primary) / 0.1), 0 4px 6px -2px hsl(var(--primary) / 0.05);
+    --shadow-xl: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.15);
+    --shadow-hero: 0 25px 50px -12px hsl(var(--primary) / 0.25);
+
+    /* Typography */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+
+    /* Animations */
+    --transition-fast: 0.15s ease-in-out;
+    --transition-normal: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    /* Dark Theme */
+    --background: 240 15% 8%;
+    --foreground: 0 0% 98%;
+
+    --primary: 210 98% 50%;
+    --primary-foreground: 240 15% 8%;
+    --primary-hover: 210 98% 55%;
+    --primary-light: 210 98% 12%;
+
+    --secondary: 270 85% 60%;
+    --secondary-foreground: 240 15% 8%;
+    --secondary-hover: 270 85% 65%;
+    --secondary-light: 270 85% 12%;
+
+    --accent: 340 85% 70%;
+    --accent-foreground: 240 15% 8%;
+    --accent-hover: 340 85% 75%;
+    --accent-light: 340 85% 12%;
+
+    --muted: 240 15% 15%;
+    --muted-foreground: 240 10% 65%;
+    --card: 240 15% 10%;
+    --card-foreground: 0 0% 98%;
+    --border: 240 15% 18%;
+    --input: 240 15% 18%;
+
+    --gradient-card: linear-gradient(145deg, hsl(240 15% 10%) 0%, hsl(240 15% 12%) 100%);
+    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-hover));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
