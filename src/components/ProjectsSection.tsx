@@ -21,11 +21,7 @@ const ProjectsSection = () => {
       technologies: ['C#', '.NET Core', 'ASP.NET Core', 'Angular', 'SQL Server', 'Entity Framework Core', 'JWT', 'Chart.js', 'NgRx', 'Swagger UI'],
       highlights: ['100% client satisfaction', 'Scalable architecture', 'Real-time features'],
       demoUrl: 'https://taskflow-dev.netlify.app/',
-<<<<<<< HEAD
-      githubUrl: 'https://github.com/simply-Rahul8/TAskFlow.git'
-=======
       githubUrl: '#'
->>>>>>> d7d619be0291f55d7c1cfacfe5f5dbfd8c2cccae
     },
     {
       title: 'GamePlan App - Fitness & Retail Management',
@@ -43,11 +39,7 @@ const ProjectsSection = () => {
       technologies: ['React Native', 'Firebase Firestore', 'Firebase Authentication', 'Jest', 'Cypress', 'GPS APIs'],
       highlights: ['5-person team leadership', 'Cross-platform deployment', 'Real-time sync'],
       demoUrl: 'https://gameplan-dev.netlify.app/',
-<<<<<<< HEAD
-      githubUrl: 'https://github.com/simply-Rahul8/GamePlanApp.git'
-=======
       githubUrl: '#'
->>>>>>> d7d619be0291f55d7c1cfacfe5f5dbfd8c2cccae
     },
     {
       title: 'Intelligent Consent Flow for Medical Care',
@@ -65,11 +57,7 @@ const ProjectsSection = () => {
       technologies: ['Python', 'Streamlit', 'Perplexity AI API', 'Whisper STT', 'gTTS', 'streamlit-drawable-canvas', 'REST APIs'],
       highlights: ['Modernized consent workflow', 'Enhanced accessibility', 'Privacy-first design'],
       demoUrl: '#',
-<<<<<<< HEAD
-      githubUrl: 'https://github.com/simply-Rahul8/Intelligent-medical-Assista.git'
-=======
       githubUrl: 'https://github.com/simply-Rahul8/Intelligent-medical-Assista'
->>>>>>> d7d619be0291f55d7c1cfacfe5f5dbfd8c2cccae
     },
     {
       title: 'Personal Data Chatbot with Streamlit, RAG, Ollama, and LangChain',
@@ -105,11 +93,7 @@ const ProjectsSection = () => {
       technologies: ['Python', 'Node.js', 'LangChain', 'Ollama', 'PostgreSQL', 'Pandas', 'REST APIs'],
       highlights: ['Advanced AI integration', 'Robustness testing', 'Multi-model architecture'],
       demoUrl: '#',
-<<<<<<< HEAD
-      githubUrl: 'https://github.com/simply-Rahul8/Dual-LLM-RAG-based-Pipeline.git'
-=======
       githubUrl: '#'
->>>>>>> d7d619be0291f55d7c1cfacfe5f5dbfd8c2cccae
     },
     {
       title: '3D Pose Estimation for Fatigue Detection',
@@ -127,11 +111,7 @@ const ProjectsSection = () => {
       technologies: ['Python', 'TensorFlow/Keras', 'MMPose', 'SemGCN', 'OpenMMLab', 'NumPy', 'SciPy', 'OpenCV'],
       highlights: ['93% accuracy achieved', 'Innovative smartphone approach', 'Academic research'],
       demoUrl: '#',
-<<<<<<< HEAD
-      githubUrl: 'https://github.com/simply-Rahul8/3D-pose-estimation.git'
-=======
       githubUrl: '#'
->>>>>>> d7d619be0291f55d7c1cfacfe5f5dbfd8c2cccae
     },
     {
       title: 'Grayscale Image Processor',
@@ -149,11 +129,7 @@ const ProjectsSection = () => {
       technologies: ['AWS Lambda', 'Python', 'Pillow', 'AWS S3', 'CloudWatch', 'Event-driven architecture'],
       highlights: ['3-person team leadership', 'Serverless deployment', 'Cost-effective scaling'],
       demoUrl: '#',
-<<<<<<< HEAD
-      githubUrl: 'https://github.com/simply-Rahul8/Grayscale-Image-Processor.git'
-=======
       githubUrl: '#'
->>>>>>> d7d619be0291f55d7c1cfacfe5f5dbfd8c2cccae
     },
     {
       title: 'COVID-19 Data Analysis Dashboard',
@@ -171,11 +147,7 @@ const ProjectsSection = () => {
       technologies: ['Flask', 'Python', 'NumPy', 'Pandas', 'Matplotlib', 'Figma', 'Git'],
       highlights: ['Team leadership', 'Data analytics expertise', 'Stakeholder-focused design'],
       demoUrl: '#',
-<<<<<<< HEAD
-      githubUrl: 'https://github.com/simply-Rahul8/COVID-19-Data-Visualization-tool.git'
-=======
       githubUrl: '#'
->>>>>>> d7d619be0291f55d7c1cfacfe5f5dbfd8c2cccae
     },
     {
       title: 'Microservices-based Online Food Ordering System',
@@ -193,11 +165,7 @@ const ProjectsSection = () => {
       technologies: ['.NET Core', 'Microservices', 'API Gateway', 'gRPC', 'REST APIs', 'Docker', 'Kubernetes'],
       highlights: ['Microservices design', 'Enterprise scalability', 'Modern deployment'],
       demoUrl: '#',
-<<<<<<< HEAD
-      githubUrl: 'https://github.com/simply-Rahul8/Micro-services-Ordering-system.git'
-=======
       githubUrl: '#'
->>>>>>> d7d619be0291f55d7c1cfacfe5f5dbfd8c2cccae
     },
     {
       title: 'Angular Weather Dashboard',
@@ -215,11 +183,7 @@ const ProjectsSection = () => {
       technologies: ['AngularJS', 'OpenWeatherMap API', 'HTML5', 'CSS3', 'Local Storage', 'REST APIs'],
       highlights: ['Client satisfaction', 'Responsive design', 'Real-time data'],
       demoUrl: '#',
-<<<<<<< HEAD
-      githubUrl: 'https://github.com/simply-Rahul8/Angular-Weather-forecaster.git'
-=======
       githubUrl: '#'
->>>>>>> d7d619be0291f55d7c1cfacfe5f5dbfd8c2cccae
     }
   ];
 
