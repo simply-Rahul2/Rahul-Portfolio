@@ -65,11 +65,7 @@
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.5.5",
-<<<<<<< HEAD
-    "@types/react": "^18.3.23",
-=======
     "@types/react": "^18.3.3",
->>>>>>> d7d619be0291f55d7c1cfacfe5f5dbfd8c2cccae
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "autoprefixer": "^10.4.20",
