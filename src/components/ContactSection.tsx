@@ -83,82 +83,87 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {/* Get In Touch */}
-          <div className="animate-fade-in-up">
-            <h3 className="text-xl font-bold mb-6">Get In Touch</h3>
-            <div className="space-y-4">
-              {contactInfo.map((contact, index) => (
-                <a
-                  key={contact.label}
-                  href={contact.href}
-                  target={contact.href.startsWith('http') ? '_blank' : undefined}
-                  rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="flex items-center gap-4 p-4 bg-card rounded-lg border hover:shadow-md transition-all duration-300 group animate-slide-in-right"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className={`p-3 rounded-lg bg-${contact.color}-light group-hover:bg-${contact.color} group-hover:text-${contact.color}-foreground transition-colors`}>
-                    <contact.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground">{contact.label}</div>
-                    <div className="text-muted-foreground text-sm">{contact.value}</div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Contact Information */}
+          <div className="space-y-8 animate-fade-in-up">
+            <div>
+              <h3 className="text-2xl font-bold mb-6">Get In Touch</h3>
+              
+              {/* Contact Methods */}
+              <div className="space-y-4 mb-8">
+                {contactInfo.map((contact, index) => (
+                  <a
+                    key={contact.label}
+                    href={contact.href}
+                    target={contact.href.startsWith('http') ? '_blank' : undefined}
+                    rel={contact.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    className="flex items-center gap-4 p-4 bg-card rounded-lg border hover:shadow-md transition-all duration-300 group animate-slide-in-right"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className={`p-3 rounded-lg bg-${contact.color}-light group-hover:bg-${contact.color} group-hover:text-${contact.color}-foreground transition-colors`}>
+                      <contact.icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                      <div className="font-medium text-foreground">{contact.label}</div>
+                      <div className="text-muted-foreground text-sm">{contact.value}</div>
+                    </div>
+                  </a>
+                ))}
+              </div>
 
-          {/* Connect Online */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-            <h3 className="text-xl font-bold mb-6">Connect Online</h3>
-            <div className="space-y-3">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 p-3 bg-card rounded-lg border hover:shadow-md transition-all duration-300 group animate-slide-in-right"
-                  style={{ animationDelay: `${(index + contactInfo.length) * 0.1}s` }}
-                >
-                  <div className={`p-2 rounded-lg bg-${social.color}-light group-hover:bg-${social.color} group-hover:text-${social.color}-foreground transition-colors`}>
-                    <social.icon className="h-4 w-4" />
-                  </div>
-                  <div>
-                    <div className="font-medium text-foreground text-sm">{social.label}</div>
-                    <div className="text-muted-foreground text-xs">{social.value}</div>
-                  </div>
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Availability */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <h3 className="text-xl font-bold mb-6">Availability</h3>
-            <div className="space-y-3">
-              {availabilityOptions.map((option, index) => (
-                <div
-                  key={option.title}
-                  className="p-4 bg-card rounded-lg border animate-scale-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="flex items-center justify-between mb-2">
-                    <h5 className="font-medium text-foreground">{option.title}</h5>
-                    <span className={`text-xs px-2 py-1 rounded-full ${
-                      option.highlight === 'Preferred' ? 'bg-primary text-primary-foreground' :
-                      option.highlight === 'Available' ? 'bg-success text-success-foreground' :
-                      'bg-accent text-accent-foreground'
-                    }`}>
-                      {option.highlight}
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground text-sm">{option.description}</p>
+              {/* Social Links */}
+              <div>
+                <h4 className="font-medium mb-4 text-foreground">Connect Online</h4>
+                <div className="space-y-3">
+                  {socialLinks.map((social, index) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-3 p-3 bg-card rounded-lg border hover:shadow-md transition-all duration-300 group animate-slide-in-right"
+                      style={{ animationDelay: `${(index + contactInfo.length) * 0.1}s` }}
+                    >
+                      <div className={`p-2 rounded-lg bg-${social.color}-light group-hover:bg-${social.color} group-hover:text-${social.color}-foreground transition-colors`}>
+                        <social.icon className="h-4 w-4" />
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground text-sm">{social.label}</div>
+                        <div className="text-muted-foreground text-xs">{social.value}</div>
+                      </div>
+                    </a>
+                  ))}
                 </div>
-              ))}
+              </div>
+            </div>
+
+            {/* Availability */}
+            <div className="animate-fade-in">
+              <h4 className="font-medium mb-4 text-foreground">Availability</h4>
+              <div className="space-y-3">
+                {availabilityOptions.map((option, index) => (
+                  <div
+                    key={option.title}
+                    className="p-4 bg-card rounded-lg border animate-scale-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <h5 className="font-medium text-foreground">{option.title}</h5>
+                      <span className={`text-xs px-2 py-1 rounded-full ${
+                        option.highlight === 'Preferred' ? 'bg-primary text-primary-foreground' :
+                        option.highlight === 'Available' ? 'bg-success text-success-foreground' :
+                        'bg-accent text-accent-foreground'
+                      }`}>
+                        {option.highlight}
+                      </span>
+                    </div>
+                    <p className="text-muted-foreground text-sm">{option.description}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
+
         </div>
 
         {/* Call to Action */}
