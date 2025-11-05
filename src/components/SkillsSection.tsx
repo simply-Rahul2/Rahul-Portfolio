@@ -204,8 +204,6 @@ const SkillsSection = () => {
                   <CardContent>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
                       {categoryData.skills.map((skill, index) => {
-                        const proficiencyLevel = skill.level === 'Expert' ? 95 : skill.level === 'Proficient' ? 80 : 60;
-                        
                         return (
                           <div
                             key={skill.name}
@@ -218,23 +216,9 @@ const SkillsSection = () => {
                                 {skill.level}
                               </Badge>
                             </div>
-                            <p className="text-sm text-muted-foreground mb-3">
+                            <p className="text-sm text-muted-foreground">
                               {skill.experience}
                             </p>
-                            
-                            {/* Animated Progress Bar */}
-                            <div className="relative w-full h-2 bg-muted rounded-full overflow-hidden">
-                              <div
-                                className={`skill-bar-fill h-full rounded-full ${getColorClasses(categoryData.color).split(' ')[0].replace('text-', 'bg-')}`}
-                                style={{ 
-                                  '--skill-level': `${proficiencyLevel}%`,
-                                  animationDelay: `${index * 0.1}s`
-                                } as React.CSSProperties}
-                              />
-                            </div>
-                            <div className="text-right mt-1">
-                              <span className="text-xs font-medium text-muted-foreground">{proficiencyLevel}%</span>
-                            </div>
                           </div>
                         );
                       })}
