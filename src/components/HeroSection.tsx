@@ -56,10 +56,6 @@ const HeroSection = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-              <Button size="lg" className="group shadow-hero hover:shadow-glow transition-all duration-300 w-full sm:w-auto">
-                <Download className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                Download Resume
-              </Button>
               <Button variant="outline" size="lg" className="group w-full sm:w-auto">
                 <Mail className="h-5 w-5 mr-2 group-hover:animate-pulse" />
                 Get In Touch

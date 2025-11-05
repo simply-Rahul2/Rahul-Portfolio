@@ -230,40 +230,6 @@ const SkillsSection = () => {
           })}
         </div>
 
-        {/* Certifications */}
-        <div className="mt-16 animate-fade-in">
-          <h3 className="text-2xl font-bold text-center mb-8">Certifications & Learning</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              'Docker for Developers',
-              'Learning Kubernetes',
-              'Learning C#',
-              'C# and .NET Essential Training',
-              'Backend Development',
-              'Backend Web Development with .NET',
-              'Become a Full Stack Web Developer',
-              'Generative AI for Web Developers',
-              'Microsoft: Building AI Agents for Beginners (2025)',
-              'Microsoft Azure Fundamentals (2023)',
-              'Full-Stack Web Development (LinkedIn Learning)',
-              'React Front-End Development (LinkedIn Learning)',
-              'AI LLM Fundamentals (Coursera)',
-              '.NET Core for Web Apps (Microsoft Learn)',
-              'AWS Academy Cloud Foundations (HDLC)'
-            ].map((cert, index) => (
-              <div
-                key={cert}
-                className="p-4 bg-card rounded-lg border hover:shadow-md transition-all duration-300 animate-slide-in-right"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0" />
-                  <span className="text-sm font-medium">{cert}</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Currently Learning */}
         <div className="mt-12 p-6 bg-primary-light/50 rounded-lg border animate-fade-in">
