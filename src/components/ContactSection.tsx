@@ -72,8 +72,8 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-24 bg-muted/30">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Let's Work Together
@@ -257,12 +257,8 @@ const ContactSection = () => {
               With 3.5+ years of experience, proven leadership skills, and a passion for innovation, 
               I'm ready to contribute to your team's success from day one.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="shadow-lg hover:shadow-xl transition-all duration-300">
-                <Download className="h-5 w-5 mr-2" />
-                Download My Resume
-              </Button>
-              <Button variant="outline" size="lg">
+            <div className="flex justify-center">
+              <Button variant="outline" size="lg" className="shadow-lg hover:shadow-xl transition-all duration-300">
                 <Mail className="h-5 w-5 mr-2" />
                 Schedule a Call
               </Button>

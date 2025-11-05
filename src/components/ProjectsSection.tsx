@@ -203,8 +203,8 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-24 bg-gradient-to-b from-background to-muted/20" style={{ backgroundSize: '200% 200%', animation: 'gradient-shift 15s ease infinite' }}>
+      <div className="container mx-auto px-6 sm:px-8 lg:px-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Featured Projects
@@ -222,10 +222,10 @@ const ProjectsSection = () => {
             return (
               <Card
                 key={project.title}
-                className="group hover:shadow-xl transition-all duration-500 border-l-4 border-l-primary animate-fade-in-up h-full"
+                className="group hover:shadow-2xl hover:-translate-y-2 hover:border-primary/50 transition-all duration-500 border-l-4 border-l-primary animate-fade-in-up h-full overflow-hidden relative before:absolute before:inset-0 before:bg-gradient-primary before:opacity-0 before:transition-opacity before:duration-500 hover:before:opacity-5"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <CardHeader className="pb-4">
+                <CardHeader className="pb-4 relative z-10">
                   <div className="flex items-start justify-between mb-3">
                     <div className={`p-2 rounded-lg bg-${categoryColor}-light`}>
                       <CategoryIcon className={`h-5 w-5 text-${categoryColor}`} />
@@ -249,7 +249,7 @@ const ProjectsSection = () => {
                   </p>
                 </CardHeader>
                 
-                <CardContent className="space-y-4 pt-0">
+                <CardContent className="space-y-4 pt-0 relative z-10">
                   {/* Key Features */}
                   <div>
                     <h4 className="font-medium mb-2 text-foreground text-sm">Key Features:</h4>

@@ -79,8 +79,15 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="py-20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-24 relative overflow-hidden">
+      {/* Animated gradient particles */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-10 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" style={{ animation: 'particle-float 20s ease-in-out infinite' }} />
+        <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" style={{ animation: 'particle-float 25s ease-in-out infinite 5s' }} />
+        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-accent/10 rounded-full blur-3xl" style={{ animation: 'particle-float 30s ease-in-out infinite 10s' }} />
+      </div>
+      
+      <div className="container mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Experience & Education
@@ -100,14 +107,23 @@ const ExperienceSection = () => {
               <h3 className="text-2xl font-bold">Work Experience</h3>
             </div>
 
-            <div className="space-y-8">
-              {experiences.map((exp, index) => (
-                <Card
-                  key={`${exp.company}-${index}`}
-                  className="group hover:shadow-lg transition-all duration-300 animate-fade-in-up"
-                  style={{ animationDelay: `${index * 0.2}s` }}
-                >
-                  <CardHeader>
+            <div className="relative">
+              {/* Interactive Timeline Line */}
+              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-accent rounded-full hidden lg:block" style={{ left: '-2rem' }} />
+              
+              <div className="space-y-8">
+                {experiences.map((exp, index) => (
+                  <div key={`${exp.company}-${index}`} className="relative">
+                    {/* Timeline Dot */}
+                    <div className="absolute left-0 top-8 w-4 h-4 bg-primary rounded-full border-4 border-background hidden lg:block shadow-lg" style={{ left: '-2.5rem' }}>
+                      <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-75" />
+                    </div>
+                    
+                    <Card
+                      className="group hover:shadow-2xl hover:-translate-y-1 hover:border-primary/50 transition-all duration-500 animate-fade-in-up"
+                      style={{ animationDelay: `${index * 0.2}s` }}
+                    >
+                      <CardHeader>
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
                       <div>
                         <CardTitle className="text-xl text-primary group-hover:text-primary-hover transition-colors">
@@ -160,8 +176,10 @@ const ExperienceSection = () => {
                       </div>
                     </div>
                   </CardContent>
-                </Card>
-              ))}
+                    </Card>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
 
@@ -178,7 +196,7 @@ const ExperienceSection = () => {
               {education.map((edu, index) => (
                 <Card
                   key={`${edu.institution}-${index}`}
-                  className="group hover:shadow-lg transition-all duration-300 animate-fade-in-up"
+                  className="group hover:shadow-2xl hover:-translate-y-1 hover:border-secondary/50 transition-all duration-500 animate-fade-in-up"
                   style={{ animationDelay: `${(index + experiences.length) * 0.2}s` }}
                 >
                   <CardHeader>

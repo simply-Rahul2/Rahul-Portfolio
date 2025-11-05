@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Code, Database, Cloud, Brain, Settings, Smartphone } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -6,6 +6,25 @@ import { Button } from '@/components/ui/button';
 
 const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState('frontend');
+  const [inView, setInView] = useState(false);
+  const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+        }
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
 
   const skillCategories = {
     frontend: {
@@ -124,8 +143,8 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="py-20 bg-muted/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="py-24 bg-muted/30" ref={sectionRef}>
+      <div className="container mx-auto px-6 sm:px-8 lg:px-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Technical Skills
@@ -183,24 +202,42 @@ const SkillsSection = () => {
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {categoryData.skills.map((skill, index) => (
-                        <div
-                          key={skill.name}
-                          className="p-4 bg-card rounded-lg border hover:shadow-md transition-all duration-300 animate-scale-in"
-                          style={{ animationDelay: `${index * 0.05}s` }}
-                        >
-                          <div className="flex items-start justify-between mb-2">
-                            <h4 className="font-medium text-foreground">{skill.name}</h4>
-                            <Badge className={`text-xs ${getLevelColor(skill.level)}`}>
-                              {skill.level}
-                            </Badge>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                      {categoryData.skills.map((skill, index) => {
+                        const proficiencyLevel = skill.level === 'Expert' ? 95 : skill.level === 'Proficient' ? 80 : 60;
+                        
+                        return (
+                          <div
+                            key={skill.name}
+                            className="p-5 bg-card rounded-lg border hover:shadow-xl hover:-translate-y-1 transition-all duration-500 animate-scale-in"
+                            style={{ animationDelay: `${index * 0.05}s` }}
+                          >
+                            <div className="flex items-start justify-between mb-3">
+                              <h4 className="font-medium text-foreground text-base">{skill.name}</h4>
+                              <Badge className={`text-xs ${getLevelColor(skill.level)}`}>
+                                {skill.level}
+                              </Badge>
+                            </div>
+                            <p className="text-sm text-muted-foreground mb-3">
+                              {skill.experience}
+                            </p>
+                            
+                            {/* Animated Progress Bar */}
+                            <div className="relative w-full h-2 bg-muted rounded-full overflow-hidden">
+                              <div
+                                className={`skill-bar-fill h-full rounded-full ${getColorClasses(categoryData.color).split(' ')[0].replace('text-', 'bg-')}`}
+                                style={{ 
+                                  '--skill-level': `${proficiencyLevel}%`,
+                                  animationDelay: `${index * 0.1}s`
+                                } as React.CSSProperties}
+                              />
+                            </div>
+                            <div className="text-right mt-1">
+                              <span className="text-xs font-medium text-muted-foreground">{proficiencyLevel}%</span>
+                            </div>
                           </div>
-                          <p className="text-sm text-muted-foreground">
-                            {skill.experience}
-                          </p>
-                        </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   </CardContent>
                 </Card>

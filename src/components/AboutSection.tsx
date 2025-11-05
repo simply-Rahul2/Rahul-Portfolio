@@ -26,8 +26,8 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30 mt-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 bg-muted/30 mt-8">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-10">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             About Me
@@ -88,7 +88,7 @@ const AboutSection = () => {
             {highlights.map((highlight, index) => (
               <Card
                 key={highlight.title}
-                className="group hover:shadow-lg transition-all duration-300 border-l-4 border-l-primary animate-slide-in-right"
+                className="group hover:shadow-xl hover:-translate-x-1 transition-all duration-500 border-l-4 border-l-primary animate-slide-in-right"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <CardHeader className="pb-3">
