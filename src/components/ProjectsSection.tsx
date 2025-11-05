@@ -203,9 +203,9 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-24 bg-gradient-to-b from-background to-muted/20" style={{ backgroundSize: '200% 200%', animation: 'gradient-shift 15s ease infinite' }}>
+    <section id="projects" className="py-16 bg-gradient-to-b from-background to-muted/20" style={{ backgroundSize: '200% 200%', animation: 'gradient-shift 15s ease infinite' }}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Featured Projects
           </h2>
@@ -316,7 +316,7 @@ const ProjectsSection = () => {
         </div>
 
         {/* Additional Projects Summary */}
-        <div className="mt-16 text-center animate-fade-in">
+        <div className="mt-12 text-center animate-fade-in">
           <Card className="bg-gradient-card border">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4">More Projects</h3>

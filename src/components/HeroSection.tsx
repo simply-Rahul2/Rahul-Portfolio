@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-gradient-hero opacity-10" />
       
@@ -15,10 +15,10 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center animate-fade-in-up min-h-screen flex flex-col justify-center pt-20">
+        <div className="text-center animate-fade-in-up flex flex-col justify-center py-8">
 
-          {/* Name - Properly centered with notable space from header */}
-          <div className="mb-12 mt-40 sm:mt-44 md:mt-48 lg:mt-52">
+          {/* Name */}
+          <div className="mb-8">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight px-2">
               Yaswanth Rahul
               <br />
@@ -27,7 +27,7 @@ const HeroSection = () => {
           </div>
 
           {/* Content Below Name */}
-          <div className="space-y-6 md:space-y-8">
+          <div className="space-y-4 md:space-y-6">
             {/* Title */}
             <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
               <span className="text-accent font-semibold">Recent Graduate</span> & Dynamic <span className="text-primary font-semibold">Full-Stack Developer</span> with{' '}
@@ -73,7 +73,7 @@ const HeroSection = () => {
             </div>
 
             {/* Scroll Indicator */}
-            <div className="animate-bounce pt-8">
+            <div className="animate-bounce pt-4">
               <a
                 href="#about"
                 className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200"
@@ -84,8 +84,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Stats - At bottom with proper spacing */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8 pt-8 pb-16 animate-fade-in px-4">
+        {/* Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 pb-8 animate-fade-in px-4">
           {[
             { number: '3+', label: 'Years Experience' },
             { number: '30+', label: 'Projects Delivered' },

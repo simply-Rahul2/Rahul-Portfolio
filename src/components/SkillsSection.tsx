@@ -143,9 +143,9 @@ const SkillsSection = () => {
   };
 
   return (
-    <section id="skills" className="py-24 bg-muted/30" ref={sectionRef}>
+    <section id="skills" className="py-16 bg-muted/30" ref={sectionRef}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Technical Skills
           </h2>

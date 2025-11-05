@@ -72,9 +72,9 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-muted/30">
+    <section id="contact" className="py-16 bg-muted/30">
       <div className="container mx-auto px-6 sm:px-8 lg:px-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Let's Work Together
           </h2>
@@ -162,7 +162,7 @@ const ContactSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center mt-16 animate-fade-in">
+        <div className="text-center mt-12 animate-fade-in">
           <div className="max-w-3xl mx-auto p-8 bg-gradient-card rounded-lg border">
             <h3 className="text-2xl font-bold mb-4">Ready to Build Something Amazing?</h3>
             <p className="text-muted-foreground mb-6 text-lg">

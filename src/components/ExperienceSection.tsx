@@ -79,7 +79,7 @@ const ExperienceSection = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 relative overflow-hidden">
+    <section id="experience" className="py-16 relative overflow-hidden">
       {/* Animated gradient particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" style={{ animation: 'particle-float 20s ease-in-out infinite' }} />
@@ -88,7 +88,7 @@ const ExperienceSection = () => {
       </div>
       
       <div className="container mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             Experience & Education
           </h2>

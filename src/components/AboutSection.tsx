@@ -26,9 +26,9 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-24 bg-muted/30 mt-8">
+    <section id="about" className="py-16 bg-muted/30">
       <div className="container mx-auto px-6 sm:px-8 lg:px-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
             About Me
           </h2>
@@ -37,7 +37,7 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
           <div className="animate-fade-in-up">
             <div className="space-y-6 text-lg leading-relaxed">
@@ -108,7 +108,7 @@ const AboutSection = () => {
         </div>
 
         {/* Achievement Numbers */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 animate-fade-in">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in">
           {[
             { number: '200+', label: 'Users Served', desc: 'Across multiple applications' },
             { number: '93%', label: 'ML Accuracy', desc: 'In fatigue detection system' },
