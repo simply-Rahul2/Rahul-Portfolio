@@ -92,6 +92,9 @@ const SkillsSection = () => {
       skills: [
         { name: 'Generative AI Development', level: 'Proficient', experience: 'AI agents & chatbots' },
         { name: 'Prompt Engineering', level: 'Proficient', experience: 'Advanced prompt techniques' },
+        { name: 'Hybrid AI Architectures', level: 'Proficient', experience: 'Rule-based + LLM systems' },
+        { name: 'Sentiment Analysis', level: 'Proficient', experience: 'Customer feedback tools' },
+        { name: 'NLP & Text Processing', level: 'Proficient', experience: 'Topic extraction & classification' },
         { name: 'Vibe Coding (AI-Assisted)', level: 'Proficient', experience: 'AI-enhanced development' },
         { name: 'LangChain Framework', level: 'Proficient', experience: '1+ years' },
         { name: 'OpenAI API Integration', level: 'Proficient', experience: '1+ years' },
@@ -109,6 +112,8 @@ const SkillsSection = () => {
       skills: [
         { name: 'Multi-Agentic Systems', level: 'Proficient', experience: 'AI orchestration' },
         { name: 'Workflow Automation (n8n)', level: 'Proficient', experience: 'Process automation' },
+        { name: 'Rule Engine Design', level: 'Proficient', experience: 'Hybrid AI systems' },
+        { name: 'Low-Latency Systems', level: 'Proficient', experience: 'Sub-500ms architectures' },
         { name: 'Agile Methodologies', level: 'Proficient', experience: '3+ years' },
         { name: 'Test-Driven Development', level: 'Proficient', experience: 'Industry practice' },
         { name: 'Pair Programming', level: 'Proficient', experience: 'Team collaboration' },
