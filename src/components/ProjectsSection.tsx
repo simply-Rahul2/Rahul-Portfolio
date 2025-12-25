@@ -42,6 +42,24 @@ const ProjectsSection = () => {
       githubUrl: 'https://github.com/simply-Rahul8/GamePlanApp.git'
     },
     {
+      title: 'Customer Feedback Analysis Tool',
+      description: 'Hybrid rule-based + AI-assisted system designed to analyze customer feedback with low latency (<500ms), fault tolerance, and scalable architecture for sentiment analysis and topic extraction.',
+      category: 'AI/Generative AI Project',
+      icon: Brain,
+      scale: 'Enterprise-ready',
+      features: [
+        'Hybrid architecture combining deterministic rules with AI for nuanced analysis',
+        'Real-time sentiment categorization (positive/neutral/negative)',
+        'Automated topic extraction and feedback routing',
+        'Critical issue auto-flagging based on pattern detection',
+        'Lightweight UI for interaction and monitoring'
+      ],
+      technologies: ['Python', 'AI/LLM APIs', 'Rule Engine', 'REST APIs', 'Caching', 'Event-driven Architecture'],
+      highlights: ['<500ms latency', 'Fault-tolerant design', 'Scalable hybrid architecture'],
+      demoUrl: '#',
+      githubUrl: 'https://github.com/simply-Rahul8/Customer-Feedback-Analysis-Tool.git'
+    },
+    {
       title: 'Intelligent Consent Flow for Medical Care',
       description: 'AI-powered conversational system that streamlines and humanizes the medical consent process using speech technologies and natural language processing.',
       category: 'AI/Generative AI Project',
