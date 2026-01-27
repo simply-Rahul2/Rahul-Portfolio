@@ -1,137 +1,159 @@
-import { Award, Users, Presentation, TrendingUp } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Brain, Code, Cloud, Layers, Lightbulb, Users } from 'lucide-react';
 
 const AboutSection = () => {
-  const highlights = [
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
+  const philosophyPoints = [
+    {
+      icon: Code,
+      title: 'Engineering First',
+      description: 'Started with full-stack (React, Angular, .NET, Python), now designing systems under real constraints—scale, latency, security.',
+    },
+    {
+      icon: Brain,
+      title: 'AI with Purpose',
+      description: 'Beyond "calling a model"—I focus on how models reason, how prompts shape behavior, and how context is managed.',
+    },
+    {
+      icon: Cloud,
+      title: 'Cloud Native',
+      description: 'Deployed on AWS, Azure, GCP. Built microservices with Docker/Kubernetes, serverless architectures, and CI/CD pipelines.',
+    },
+    {
+      icon: Layers,
+      title: 'Systems Thinking',
+      description: 'From 3D pose estimation research to production RAG chatbots—every solution considers reliability, validation, and real-world usability.',
+    },
     {
       icon: Users,
-      title: 'Team Leadership',
-      description: 'Led 5-member cross-functional teams and mentored junior developers',
+      title: 'Collaborative Leader',
+      description: 'Led teams, mentored developers, and explained complex technical ideas to non-technical stakeholders.',
     },
     {
-      icon: Presentation,
-      title: 'Stakeholder Engagement',
-      description: 'Presented technical demos to stakeholders and CEO at Gaddr',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Performance Impact',
-      description: 'Improved team productivity by 20% and reduced deployment time by 15%',
-    },
-    {
-      icon: Award,
-      title: 'Client Success',
-      description: 'Achieved 100% client satisfaction in freelance projects',
+      icon: Lightbulb,
+      title: 'Continuous Learner',
+      description: 'Experimenting with prompt engineering, multi-LLM orchestration, and reducing hallucinations in production systems.',
     },
   ];
 
   return (
-    <section id="about" className="py-16 bg-muted/30">
-      <div className="container mx-auto px-6 sm:px-8 lg:px-10">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            About Me
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Passionate about building innovative solutions that make a difference
-          </p>
-        </div>
+    <section id="about" className="py-20 bg-muted/30" ref={ref}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="max-w-6xl mx-auto"
+        >
+          {/* Section Header */}
+          <motion.div variants={itemVariants} className="text-center mb-16">
+            <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl mb-4">
+              My <span className="text-gradient">Journey</span>
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+              From full-stack foundations to AI-driven systems
+            </p>
+          </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
-          {/* Text Content */}
-          <div className="animate-fade-in-up">
-            <div className="space-y-6 text-lg leading-relaxed">
-              <p>
-                I'm a <span className="text-accent font-semibold">recent graduate</span> & <span className="text-primary font-semibold">dynamic Full-Stack Developer</span> with{' '}
-                <span className="text-secondary font-semibold">3+ years</span> of experience building scalable, 
-                consumer-centric applications using modern technologies like{' '}
-                <span className="text-accent font-semibold">C#, .NET Core, Angular, React, and cloud-native platforms</span>.
-              </p>
+          {/* Story Content */}
+          <div className="grid lg:grid-cols-5 gap-12 mb-16">
+            {/* Main Story */}
+            <motion.div variants={itemVariants} className="lg:col-span-3 space-y-6">
+              <div className="prose prose-lg dark:prose-invert max-w-none">
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  My work lives at the intersection of <span className="text-primary font-medium">software engineering</span>, 
+                  <span className="text-secondary font-medium"> cloud platforms</span>, and 
+                  <span className="text-accent font-medium"> applied AI</span>. I started by building full-stack applications, 
+                  deploying systems on AWS, Azure, and GCP.
+                </p>
+                
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  Over time, I became most interested not just in using tools, but in understanding 
+                  <strong className="text-foreground"> how systems behave under real constraints</strong>—scale, 
+                  latency, security, and maintainability. That curiosity naturally led me into AI engineering.
+                </p>
 
-              <p>
-                At <span className="text-primary font-semibold">Gaddr</span>, I lead a 5-member cross-functional team, 
-                mentor junior interns, and deliver user-focused solutions. I present technical demos to stakeholders 
-                and the CEO, driving product success through innovative development approaches.
-              </p>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  For my thesis, I built a <strong className="text-foreground">3D pose estimation system for fatigue detection</strong> using 
+                  smartphone-based motion data—achieving <span className="text-primary font-semibold">93% accuracy</span> with a practical, 
+                  low-cost approach. That project shaped how I think about applied ML: research that solves real problems and can actually be used.
+                </p>
 
-              <p>
-                My expertise spans <span className="text-secondary font-semibold">AI-driven development</span> with 
-                LangChain and OpenAI API, along with proficiency in <span className="text-accent font-semibold">
-                AWS, Azure, GCP</span>, and modern development practices including Agile methodologies and DevSecOps.
-              </p>
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  What drives me: <strong className="text-foreground">designing intelligent systems that people can trust</strong>. 
+                  Products where AI decisions matter, where backend reliability matters, and where good engineering directly shapes user experience.
+                </p>
+              </div>
 
-              <p>
-                <span className="text-primary font-semibold">Fluent in English</span> with{' '}
-                <span className="text-secondary font-semibold">B2 Swedish proficiency</span>, I'm eager to relocate to 
-                Stockholm to contribute to innovative, client-focused solutions in dynamic tech environments.
-              </p>
-            </div>
-
-            {/* Languages */}
-            <div className="mt-8 p-6 bg-card rounded-lg border">
-              <h3 className="text-xl font-semibold mb-4 text-primary">Languages</h3>
-              <div className="grid grid-cols-2 gap-4">
-                <div>
-                  <span className="font-medium">English</span>
-                  <p className="text-muted-foreground text-sm">Fluent</p>
+              {/* Languages */}
+              <div className="flex flex-wrap gap-4 pt-4">
+                <div className="px-4 py-2 bg-card border rounded-lg">
+                  <span className="text-sm text-muted-foreground">English</span>
+                  <span className="block text-foreground font-medium">Fluent</span>
                 </div>
-                <div>
-                  <span className="font-medium">Swedish</span>
-                  <p className="text-muted-foreground text-sm">B2 (Intermediate)</p>
+                <div className="px-4 py-2 bg-card border rounded-lg">
+                  <span className="text-sm text-muted-foreground">Swedish</span>
+                  <span className="block text-foreground font-medium">B2 Intermediate</span>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
 
-          {/* Highlights Cards */}
-          <div className="grid gap-6 animate-fade-in-up">
-            {highlights.map((highlight, index) => (
-              <Card
-                key={highlight.title}
-                className="group hover:shadow-xl hover:-translate-x-1 transition-all duration-500 border-l-4 border-l-primary animate-slide-in-right"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardHeader className="pb-3">
-                  <CardTitle className="flex items-center gap-3 text-lg">
-                    <div className="p-2 bg-primary-light rounded-lg">
-                      <highlight.icon className="h-5 w-5 text-primary" />
+            {/* Philosophy Cards */}
+            <motion.div variants={itemVariants} className="lg:col-span-2">
+              <div className="grid gap-3">
+                {philosophyPoints.map((point, index) => (
+                  <motion.div
+                    key={point.title}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ delay: 0.3 + index * 0.1 }}
+                    className="flex gap-3 p-4 bg-card border rounded-xl hover:border-primary/50 hover:shadow-md transition-all duration-300"
+                  >
+                    <div className="flex-shrink-0 w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <point.icon className="w-5 h-5 text-primary" />
                     </div>
-                    {highlight.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{highlight.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+                    <div>
+                      <h4 className="font-semibold text-foreground text-sm">{point.title}</h4>
+                      <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{point.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
           </div>
-        </div>
 
-        {/* Achievement Numbers */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12 animate-fade-in">
-          {[
-            { number: '200+', label: 'Users Served', desc: 'Across multiple applications' },
-            { number: '93%', label: 'ML Accuracy', desc: 'In fatigue detection system' },
-            { number: '20%', label: 'Efficiency Boost', desc: 'Through mentorship & optimization' },
-            { number: '5', label: 'Team Size', desc: 'Cross-functional leadership' }
-          ].map((achievement, index) => (
-            <div
-              key={achievement.label}
-              className="text-center p-6 bg-card rounded-lg border group hover:shadow-lg transition-all duration-300 animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="text-3xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
-                {achievement.number}
-              </div>
-              <div className="font-medium text-foreground mb-1">
-                {achievement.label}
-              </div>
-              <div className="text-sm text-muted-foreground">
-                {achievement.desc}
-              </div>
-            </div>
-          ))}
-        </div>
+          {/* Quote/Tagline */}
+          <motion.div
+            variants={itemVariants}
+            className="text-center p-8 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-2xl border"
+          >
+            <blockquote className="text-xl md:text-2xl font-medium text-foreground italic">
+              "If you explore my work, you won't just see finished code—you'll see experiments, trade-offs, and learning in progress."
+            </blockquote>
+            <p className="text-muted-foreground mt-4">That's how I grow as an engineer.</p>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,261 +1,207 @@
-import { useState, useEffect, useRef } from 'react';
-import { Code, Database, Cloud, Brain, Settings, Smartphone } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { motion, useInView } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { Code, Database, Cloud, Brain, Settings } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 
 const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState('frontend');
-  const [inView, setInView] = useState(false);
-  const sectionRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-        }
-      },
-      { threshold: 0.2 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => observer.disconnect();
-  }, []);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [activeCategory, setActiveCategory] = useState('ai');
 
   const skillCategories = {
-    frontend: {
-      title: 'Frontend Technologies',
-      icon: Code,
-      color: 'primary',
+    ai: {
+      title: 'AI & ML',
+      icon: Brain,
       skills: [
-        { name: 'Angular (2+)', level: 'Proficient', experience: '3+ years, 8+ projects' },
-        { name: 'React.js', level: 'Proficient', experience: '2+ years, 4+ projects' },
-        { name: 'Next.js', level: 'Proficient', experience: '1+ years, 3+ projects' },
-        { name: 'Vue.js', level: 'Moderate', experience: '1 year, 2+ projects' },
-        { name: 'TypeScript', level: 'Proficient', experience: '3+ years' },
-        { name: 'JavaScript (ES6+)', level: 'Proficient', experience: '4+ years' },
-        { name: 'HTML5 & CSS3', level: 'Proficient', experience: '4+ years' },
-        { name: 'React Native', level: 'Proficient', experience: '1+ years (GamePlan App)' },
-        { name: 'Kotlin', level: 'Proficient', experience: '1+ years (Food Recipe App)' }
+        'Generative AI Development',
+        'Prompt Engineering',
+        'RAG Implementation',
+        'LangChain Framework',
+        'OpenAI API Integration',
+        'Hybrid AI Architectures',
+        'Sentiment Analysis',
+        'NLP & Text Processing',
+        'TensorFlow/Keras',
+        'Multi-LLM Orchestration',
+        'AI Agent Building',
+        'MMPose & SemGCN'
+      ]
+    },
+    frontend: {
+      title: 'Frontend',
+      icon: Code,
+      skills: [
+        'React.js',
+        'Angular (2+)',
+        'Next.js',
+        'TypeScript',
+        'React Native',
+        'Vue.js',
+        'JavaScript (ES6+)',
+        'HTML5 & CSS3',
+        'Tailwind CSS'
       ]
     },
     backend: {
-      title: 'Backend Technologies',
+      title: 'Backend',
       icon: Database,
-      color: 'secondary',
       skills: [
-        { name: 'C#', level: 'Proficient', experience: '3+ years' },
-        { name: '.NET Core', level: 'Proficient', experience: '3+ years' },
-        { name: 'ASP.NET Core', level: 'Proficient', experience: '3+ years' },
-        { name: 'Node.js', level: 'Proficient', experience: '3+ years' },
-        { name: 'Python', level: 'Proficient', experience: '3+ years' },
-        { name: 'Entity Framework Core', level: 'Proficient', experience: '3+ years' },
-        { name: 'REST APIs', level: 'Proficient', experience: '4+ years' },
-        { name: 'JWT Authentication', level: 'Proficient', experience: '2+ years' }
-      ]
-    },
-    database: {
-      title: 'Database Technologies',
-      icon: Database,
-      color: 'accent',
-      skills: [
-        { name: 'SQL Server', level: 'Proficient', experience: '3+ years' },
-        { name: 'PostgreSQL', level: 'Proficient', experience: '2+ years' },
-        { name: 'MongoDB', level: 'Proficient', experience: '2+ years' },
-        { name: 'SQLite', level: 'Proficient', experience: '2+ years' },
-        { name: 'Firebase Firestore', level: 'Proficient', experience: '1+ years' },
-        { name: 'Hadoop', level: 'Proficient', experience: '1.5+ years' }
+        'C# / .NET Core',
+        'ASP.NET Core',
+        'Node.js',
+        'Python',
+        'REST APIs',
+        'Entity Framework',
+        'PostgreSQL',
+        'SQL Server',
+        'MongoDB',
+        'Firebase'
       ]
     },
     cloud: {
       title: 'Cloud & DevOps',
       icon: Cloud,
-      color: 'primary',
       skills: [
-        { name: 'AWS (EC2, S3, Lambda)', level: 'Proficient', experience: '2+ years' },
-        { name: 'Azure', level: 'Proficient', experience: '2+ years' },
-        { name: 'GCP', level: 'Proficient', experience: '1+ years' },
-        { name: 'Docker', level: 'Proficient', experience: '2+ years' },
-        { name: 'Kubernetes', level: 'Proficient', experience: '1+ years' },
-        { name: 'GitHub Actions', level: 'Proficient', experience: '2+ years' },
-        { name: 'CI/CD Pipelines', level: 'Proficient', experience: '2+ years' }
+        'AWS (EC2, S3, Lambda)',
+        'Azure',
+        'Google Cloud Platform',
+        'Docker',
+        'Kubernetes',
+        'GitHub Actions',
+        'CI/CD Pipelines',
+        'Microservices',
+        'Serverless Architecture'
       ]
     },
-    ai: {
-      title: 'Generative AI & Prompt Engineering',
-      icon: Brain,
-      color: 'secondary',
-      skills: [
-        { name: 'Generative AI Development', level: 'Proficient', experience: 'AI agents & chatbots' },
-        { name: 'Prompt Engineering', level: 'Proficient', experience: 'Advanced prompt techniques' },
-        { name: 'Hybrid AI Architectures', level: 'Proficient', experience: 'Rule-based + LLM systems' },
-        { name: 'Sentiment Analysis', level: 'Proficient', experience: 'Customer feedback tools' },
-        { name: 'NLP & Text Processing', level: 'Proficient', experience: 'Topic extraction & classification' },
-        { name: 'Vibe Coding (AI-Assisted)', level: 'Proficient', experience: 'AI-enhanced development' },
-        { name: 'LangChain Framework', level: 'Proficient', experience: '1+ years' },
-        { name: 'OpenAI API Integration', level: 'Proficient', experience: '1+ years' },
-        { name: 'Hugging Face Models', level: 'Proficient', experience: 'Dual-LLM project' },
-        { name: 'RAG Implementation', level: 'Proficient', experience: 'Chatbot development' },
-        { name: 'AI Agent Building', level: 'Proficient', experience: 'Microsoft certification' },
-        { name: 'TensorFlow/Keras', level: 'Proficient', experience: 'Bachelor\'s thesis' },
-        { name: 'MMPose & SemGCN', level: 'Proficient', experience: '3D pose estimation' }
-      ]
-    },
-    tools: {
-      title: 'Development Practices',
+    practices: {
+      title: 'Practices',
       icon: Settings,
-      color: 'accent',
       skills: [
-        { name: 'Multi-Agentic Systems', level: 'Proficient', experience: 'AI orchestration' },
-        { name: 'Workflow Automation (n8n)', level: 'Proficient', experience: 'Process automation' },
-        { name: 'Rule Engine Design', level: 'Proficient', experience: 'Hybrid AI systems' },
-        { name: 'Low-Latency Systems', level: 'Proficient', experience: 'Sub-500ms architectures' },
-        { name: 'Agile Methodologies', level: 'Proficient', experience: '3+ years' },
-        { name: 'Test-Driven Development', level: 'Proficient', experience: 'Industry practice' },
-        { name: 'Pair Programming', level: 'Proficient', experience: 'Team collaboration' },
-        { name: 'Code Review', level: 'Proficient', experience: 'Quality assurance' },
-        { name: 'Git Version Control', level: 'Proficient', experience: '4+ years' },
-        { name: 'Microservices', level: 'Proficient', experience: 'Enterprise projects' },
-        { name: 'API Documentation', level: 'Proficient', experience: 'Swagger/OpenAPI' }
+        'System Design',
+        'Low-Latency Systems',
+        'Agile Methodologies',
+        'Test-Driven Development',
+        'Git Version Control',
+        'API Documentation',
+        'Code Review',
+        'Technical Leadership'
       ]
     }
   };
 
-  const categories = Object.keys(skillCategories);
-
-  const getColorClasses = (color: string) => {
-    const colors = {
-      primary: 'border-primary text-primary bg-primary-light',
-      secondary: 'border-secondary text-secondary bg-secondary-light',
-      accent: 'border-accent text-accent bg-accent-light'
-    };
-    return colors[color as keyof typeof colors] || colors.primary;
-  };
-
-  const getLevelColor = (level: string) => {
-    switch (level) {
-      case 'Proficient':
-        return 'bg-success text-success-foreground';
-      case 'Moderate':
-        return 'bg-warning text-warning-foreground';
-      default:
-        return 'bg-muted text-muted-foreground';
-    }
-  };
+  const categories = Object.entries(skillCategories);
 
   return (
-    <section id="skills" className="py-16 bg-muted/30" ref={sectionRef}>
-      <div className="container mx-auto px-6 sm:px-8 lg:px-10">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Technical Skills
+    <section id="skills" ref={ref} className="py-20">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl mb-4">
+            Technical <span className="text-gradient">Skills</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Comprehensive expertise across the full technology stack
+            Full-stack expertise across the modern technology landscape
           </p>
-        </div>
+        </motion.div>
 
-        {/* Category Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-12 animate-fade-in">
-          {categories.map((category) => {
-            const categoryData = skillCategories[category as keyof typeof skillCategories];
-            const IconComponent = categoryData.icon;
-            const isActive = activeCategory === category;
-            
+        {/* Category Tabs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          className="flex flex-wrap justify-center gap-2 mb-10"
+        >
+          {categories.map(([key, cat]) => {
+            const Icon = cat.icon;
+            const isActive = activeCategory === key;
             return (
               <Button
-                key={category}
+                key={key}
                 variant={isActive ? "default" : "outline"}
                 size="sm"
-                onClick={() => setActiveCategory(category)}
-                className={`transition-all duration-300 ${
-                  isActive ? 'shadow-lg' : 'hover:shadow-md'
-                }`}
+                onClick={() => setActiveCategory(key)}
+                className={`transition-all ${isActive ? 'shadow-md' : ''}`}
               >
-                <IconComponent className="h-4 w-4 mr-2" />
-                {categoryData.title}
+                <Icon className="h-4 w-4 mr-2" />
+                {cat.title}
               </Button>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* Skills Display */}
-        <div className="animate-fade-in-up">
-          {categories.map((category) => {
-            const categoryData = skillCategories[category as keyof typeof skillCategories];
-            const IconComponent = categoryData.icon;
-            const isVisible = activeCategory === category;
-
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.2, duration: 0.5 }}
+          className="max-w-4xl mx-auto"
+        >
+          {categories.map(([key, cat]) => {
+            const Icon = cat.icon;
+            if (key !== activeCategory) return null;
+            
             return (
-              <div
-                key={category}
-                className={`transition-all duration-500 ${
-                  isVisible ? 'block' : 'hidden'
-                }`}
+              <motion.div
+                key={key}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3 }}
+                className="p-6 bg-card border rounded-2xl"
               >
-                <Card className="border-l-4 border-l-primary">
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-3 text-2xl">
-                      <div className={`p-3 rounded-lg ${getColorClasses(categoryData.color)}`}>
-                        <IconComponent className="h-6 w-6" />
-                      </div>
-                      {categoryData.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-                      {categoryData.skills.map((skill, index) => {
-                        return (
-                          <div
-                            key={skill.name}
-                            className="p-5 bg-card rounded-lg border hover:shadow-xl hover:-translate-y-1 transition-all duration-500 animate-scale-in"
-                            style={{ animationDelay: `${index * 0.05}s` }}
-                          >
-                            <div className="flex items-start justify-between mb-3">
-                              <h4 className="font-medium text-foreground text-base">{skill.name}</h4>
-                              <Badge className={`text-xs ${getLevelColor(skill.level)}`}>
-                                {skill.level}
-                              </Badge>
-                            </div>
-                            <p className="text-sm text-muted-foreground">
-                              {skill.experience}
-                            </p>
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="p-3 bg-primary/10 rounded-xl">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold">{cat.title}</h3>
+                </div>
+                
+                <div className="flex flex-wrap gap-2">
+                  {cat.skills.map((skill, index) => (
+                    <motion.div
+                      key={skill}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: index * 0.03 }}
+                    >
+                      <Badge variant="secondary" className="px-3 py-1.5 text-sm">
+                        {skill}
+                      </Badge>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
 
-
-        {/* Currently Learning */}
-        <div className="mt-12 p-6 bg-primary-light/50 rounded-lg border animate-fade-in">
-          <h3 className="text-xl font-bold mb-4 text-primary">Currently Exploring</h3>
-          <div className="flex flex-wrap gap-3">
+        {/* Currently Exploring */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.3, duration: 0.5 }}
+          className="mt-10 p-6 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl border max-w-4xl mx-auto"
+        >
+          <h3 className="text-lg font-semibold mb-4 text-center">Currently Exploring</h3>
+          <div className="flex flex-wrap justify-center gap-2">
             {[
-              'NX Monorepo',
+              'MLOps (MLflow, Kubeflow)',
               'GraphQL',
-              'Contentful CMS',
-              'ClickHouse',
-              'Apache Superset', 
-              'Dagster',
+              'NX Monorepo',
               'Elasticsearch',
-              'MLOps (MLflow, Kubeflow)'
+              'Apache Superset',
+              'Advanced RAG Patterns'
             ].map((tech) => (
-              <Badge key={tech} variant="outline" className="border-primary text-primary">
+              <Badge key={tech} variant="outline" className="border-primary/50 text-primary">
                 {tech}
               </Badge>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

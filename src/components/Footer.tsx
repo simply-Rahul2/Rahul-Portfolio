@@ -1,4 +1,4 @@
-import { Heart, ArrowUp } from 'lucide-react';
+import { Heart, ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -7,86 +7,58 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-card border-t">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-card border-t py-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Brand */}
-          <div className="space-y-4">
-            <div className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-              YR.
-            </div>
-            <p className="text-muted-foreground text-sm max-w-sm">
-              Dynamic Full-Stack Developer passionate about building innovative, AI-enhanced solutions 
-              that make a real difference.
-            </p>
-            <p className="text-muted-foreground text-sm">
-              📍 Karlskrona, Sweden<br />
-              🌍 Open to Stockholm relocation
-            </p>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="font-medium text-foreground">Quick Links</h3>
-            <div className="space-y-2">
-              {[
-                { href: '#about', label: 'About Me' },
-                { href: '#experience', label: 'Experience' },
-                { href: '#skills', label: 'Skills' },
-                { href: '#projects', label: 'Projects' },
-                { href: '#contact', label: 'Contact' }
-              ].map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  className="block text-muted-foreground hover:text-primary transition-colors duration-200 text-sm"
-                >
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Professional Info */}
-          <div className="space-y-4">
-            <h3 className="font-medium text-foreground">Professional</h3>
-            <div className="space-y-2 text-sm text-muted-foreground">
-              <p>
-                <span className="font-medium">Experience:</span> 3.5+ years
-              </p>
-              <p>
-                <span className="font-medium">Specialization:</span> Full-Stack Development
-              </p>
-              <p>
-                <span className="font-medium">Focus:</span> AI/ML Integration
-              </p>
-              <p>
-                <span className="font-medium">Languages:</span> English (Fluent), Swedish (B2)
-              </p>
-              <p>
-                <span className="font-medium">Availability:</span> Full-Time, Freelance, Consulting
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="border-t mt-6 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2 text-muted-foreground text-sm">
-            <span>Built with</span>
-            <Heart className="h-4 w-4 text-red-500 animate-pulse" />
-            <span>using React, TypeScript & Tailwind CSS</span>
-          </div>
-
           <div className="flex items-center gap-4">
-            <p className="text-muted-foreground text-sm">
-              © 2025 Yaswanth Rahul Yarlagadda. All rights reserved.
-            </p>
+            <span className="text-2xl font-bold text-gradient heading-display">YR.</span>
+            <div className="text-sm text-muted-foreground">
+              <p>Full-Stack & AI Engineer</p>
+              <p className="flex items-center gap-1">
+                <span>📍</span> Karlskrona, Sweden
+              </p>
+            </div>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-3">
+            <a
+              href="https://github.com/simply-Rahul8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 hover:bg-primary/10 rounded-lg transition-colors"
+            >
+              <Github className="h-5 w-5 text-muted-foreground hover:text-primary" />
+            </a>
+            <a
+              href="https://linkedin.com/in/ry-"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 hover:bg-primary/10 rounded-lg transition-colors"
+            >
+              <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary" />
+            </a>
+            <a
+              href="mailto:yashwanthrahul5126@gmail.com"
+              className="p-2 hover:bg-primary/10 rounded-lg transition-colors"
+            >
+              <Mail className="h-5 w-5 text-muted-foreground hover:text-primary" />
+            </a>
+          </div>
+
+          {/* Copyright & Back to Top */}
+          <div className="flex items-center gap-4">
+            <div className="flex items-center gap-1 text-sm text-muted-foreground">
+              <span>Built with</span>
+              <Heart className="h-4 w-4 text-accent" />
+              <span>© 2025</span>
+            </div>
             <Button
               variant="ghost"
               size="sm"
               onClick={scrollToTop}
-              className="hover:bg-primary hover:text-primary-foreground transition-colors"
+              className="hover:bg-primary/10"
             >
               <ArrowUp className="h-4 w-4" />
             </Button>

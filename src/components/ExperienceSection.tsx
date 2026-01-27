@@ -1,275 +1,224 @@
-import { Calendar, MapPin, Users, Briefcase } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
+import { Calendar, MapPin, Briefcase, GraduationCap } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 
 const ExperienceSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+
   const experiences = [
     {
       title: 'Fullstack & AI Developer Intern',
       company: 'Gaddr',
       location: 'Sweden',
       period: 'March 2025 - Present',
-      type: 'Internship',
-      description: 'Leading cross-functional teams and developing AI-enhanced consumer applications',
       achievements: [
-        'Led 5-member cross-functional team development of 30+ consumer-facing web applications',
-        'Mentored 5 junior interns in full-stack development and Agile practices',
-        'Enhanced user engagement for 100+ users through innovative solutions',
-        'Improved team productivity by 20% through effective mentorship',
+        'Led 5-member team developing 30+ consumer-facing applications',
+        'Mentored junior interns, improving team productivity by 20%',
         'Reduced deployment time by 15% through CI/CD optimization',
-        'Successfully presented technical demos to stakeholders and CEO'
+        'Presented technical demos to stakeholders and CEO'
       ],
-      technologies: ['Angular', 'React', 'Vue.js', 'Next.js', 'Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'Azure', 'AWS', 'LangChain', 'OpenAI API', 'Docker', 'GitHub Actions']
+      technologies: ['Angular', 'React', 'Python', 'Azure', 'LangChain', 'OpenAI API']
     },
     {
       title: 'Freelance Full Stack Developer',
       company: 'Remote',
-      location: 'Remote',
+      location: 'Global',
       period: '2022 - 2024',
-      type: 'Freelance',
-      description: 'Delivered customer-obsessed B2B/DTC solutions with rapid iteration cycles',
       achievements: [
-        'Achieved 100% client satisfaction across all freelance projects',
+        '100% client satisfaction across all projects',
         'Delivered projects with 1-3 week rapid iteration cycles',
-        'Reduced technical debt by 20% through code refactoring',
-        'Built scalable, modular architectures across all projects',
-        'Developed 5+ Angular-based projects with real-time features',
-        'Enhanced user engagement with event-driven designs and responsive UIs'
+        'Built 5+ Angular-based projects with real-time features',
+        'Reduced technical debt by 20% through refactoring'
       ],
-      technologies: ['Angular', 'ASP.NET Core', 'C#', 'SQL Server', 'Entity Framework Core', 'JWT', 'Chart.js', 'SignalR', 'Blazor', 'REST APIs']
+      technologies: ['Angular', 'ASP.NET Core', 'C#', 'SQL Server', 'SignalR']
     },
     {
       title: 'Cloud Computing Intern',
       company: 'HDLC Info Technologies',
       location: 'India',
       period: 'May 2023 - July 2023',
-      type: 'Internship',
-      description: 'Executed cloud operations and built scalable infrastructure solutions',
       achievements: [
-        'Executed 50+ cloud operations using AWS EC2 and S3',
-        'Improved DevOps efficiency by 10% through pipeline optimization',
-        'Automated infrastructure via CI/CD pipelines using GitHub Actions',
-        'Delivered scalable infrastructure for consumer-focused client applications',
-        'Gained hands-on experience with GCP and Azure platforms',
-        'Successfully met client requirements in consumer sectors'
+        'Executed 50+ cloud operations using AWS',
+        'Automated infrastructure via CI/CD pipelines',
+        'Improved DevOps efficiency by 10%'
       ],
-      technologies: ['AWS', 'EC2', 'S3', 'CloudWatch', 'GCP', 'Azure', 'GitHub Actions', 'CI/CD']
+      technologies: ['AWS', 'EC2', 'S3', 'GitHub Actions', 'GCP']
     }
   ];
 
   const education = [
     {
-      degree: 'Bachelor\'s Exchange Program in Computer Science',
-      institution: 'Blekinge Institute of Technology (BTH)',
+      degree: 'B.Tech Computer Science (Exchange)',
+      institution: 'Blekinge Institute of Technology',
       location: 'Sweden',
-      period: '2024 - June 2025',
-      status: 'Graduated',
-      focus: 'Full-Stack Development, Cloud Computing, Generative AI',
-      courses: ['Applied Generative AI', 'Introduction to Cloud Computing', 'Mobile Applications Development']
+      period: '2024 - 2025',
+      focus: 'Full-Stack, Cloud, Generative AI'
     },
     {
-      degree: 'Bachelor of Technology (B.Tech) in Computer Science',
-      institution: 'Jawaharlal Nehru Technological University (JNTU)',
+      degree: 'B.Tech Computer Science',
+      institution: 'JNTU',
       location: 'India',
       period: '2021 - 2024',
-      status: 'Graduated',
-      focus: 'Machine Learning, Data Analytics, Software Development',
-      courses: ['Machine Learning', 'Data Structures', 'Python Programming', 'Cyber Security', 'Big Data Analytics', 'Cryptography & Network Security']
+      focus: 'ML, Data Analytics, Software Development'
     }
   ];
 
   return (
-    <section id="experience" className="py-16 relative overflow-hidden">
-      {/* Animated gradient particles */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" style={{ animation: 'particle-float 20s ease-in-out infinite' }} />
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" style={{ animation: 'particle-float 25s ease-in-out infinite 5s' }} />
-        <div className="absolute top-1/2 left-1/2 w-72 h-72 bg-accent/10 rounded-full blur-3xl" style={{ animation: 'particle-float 30s ease-in-out infinite 10s' }} />
-      </div>
-      
-      <div className="container mx-auto px-6 sm:px-8 lg:px-10 relative z-10">
-        <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent">
-            Experience & Education
+    <section id="experience" ref={ref} className="py-20 bg-muted/30">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12"
+        >
+          <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl mb-4">
+            Experience & <span className="text-gradient">Education</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             A journey of continuous learning and professional growth
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Experience Column */}
+        <div className="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* Experience */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 bg-primary-light rounded-lg">
-                <Briefcase className="h-6 w-6 text-primary" />
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="flex items-center gap-3 mb-6"
+            >
+              <div className="p-2 bg-primary/10 rounded-lg">
+                <Briefcase className="h-5 w-5 text-primary" />
               </div>
-              <h3 className="text-2xl font-bold">Work Experience</h3>
-            </div>
+              <h3 className="text-xl font-semibold">Work Experience</h3>
+            </motion.div>
 
-            <div className="relative">
-              {/* Interactive Timeline Line */}
-              <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-secondary to-accent rounded-full hidden lg:block" style={{ left: '-2rem' }} />
-              
-              <div className="space-y-8">
-                {experiences.map((exp, index) => (
-                  <div key={`${exp.company}-${index}`} className="relative">
-                    {/* Timeline Dot */}
-                    <div className="absolute left-0 top-8 w-4 h-4 bg-primary rounded-full border-4 border-background hidden lg:block shadow-lg" style={{ left: '-2.5rem' }}>
-                      <div className="absolute inset-0 bg-primary rounded-full animate-ping opacity-75" />
-                    </div>
-                    
-                    <Card
-                      className="group hover:shadow-2xl hover:-translate-y-1 hover:border-primary/50 transition-all duration-500 animate-fade-in-up"
-                      style={{ animationDelay: `${index * 0.2}s` }}
-                    >
-                      <CardHeader>
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                      <div>
-                        <CardTitle className="text-xl text-primary group-hover:text-primary-hover transition-colors">
-                          {exp.title}
-                        </CardTitle>
-                        <p className="text-lg font-medium text-foreground mt-1">
-                          {exp.company}
-                        </p>
+            <div className="space-y-4">
+              {experiences.map((exp, index) => (
+                <motion.div
+                  key={exp.company}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.2 + index * 0.1, duration: 0.4 }}
+                >
+                  <Card className="hover:border-primary/50 transition-all duration-300">
+                    <CardContent className="p-5">
+                      <div className="flex items-start justify-between mb-2">
+                        <div>
+                          <h4 className="font-semibold text-foreground">{exp.title}</h4>
+                          <p className="text-sm text-primary font-medium">{exp.company}</p>
+                        </div>
                       </div>
-                      <Badge variant="secondary" className="w-fit">
-                        {exp.type}
-                      </Badge>
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-muted-foreground text-sm">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        {exp.period}
+                      
+                      <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
+                          {exp.period}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <MapPin className="h-3 w-3" />
+                          {exp.location}
+                        </span>
                       </div>
-                      <div className="flex items-center gap-1">
-                        <MapPin className="h-4 w-4" />
-                        {exp.location}
-                      </div>
-                    </div>
-                  </CardHeader>
-                  
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground">{exp.description}</p>
-                    
-                    <div>
-                      <h4 className="font-medium mb-2 text-foreground">Key Achievements:</h4>
-                      <ul className="space-y-1 text-sm text-muted-foreground">
-                        {exp.achievements.map((achievement, achIndex) => (
-                          <li key={achIndex} className="flex items-start gap-2">
-                            <span className="text-primary mt-1.5 text-xs">•</span>
+
+                      <ul className="space-y-1 mb-3">
+                        {exp.achievements.slice(0, 3).map((achievement, i) => (
+                          <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
+                            <span className="text-primary mt-0.5">•</span>
                             {achievement}
                           </li>
                         ))}
                       </ul>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-medium mb-2 text-foreground">Technologies:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech) => (
-                          <Badge key={tech} variant="outline" className="text-xs">
+
+                      <div className="flex flex-wrap gap-1">
+                        {exp.technologies.slice(0, 4).map((tech) => (
+                          <span key={tech} className="text-xs bg-muted px-2 py-0.5 rounded text-muted-foreground">
                             {tech}
-                          </Badge>
+                          </span>
                         ))}
+                        {exp.technologies.length > 4 && (
+                          <span className="text-xs text-muted-foreground">+{exp.technologies.length - 4}</span>
+                        )}
                       </div>
-                    </div>
-                  </CardContent>
-                    </Card>
-                  </div>
-                ))}
-              </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
             </div>
           </div>
 
-          {/* Education Column */}
+          {/* Education */}
           <div>
-            <div className="flex items-center gap-3 mb-8">
-              <div className="p-3 bg-secondary-light rounded-lg">
-                <Users className="h-6 w-6 text-secondary" />
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ delay: 0.1, duration: 0.5 }}
+              className="flex items-center gap-3 mb-6"
+            >
+              <div className="p-2 bg-secondary/10 rounded-lg">
+                <GraduationCap className="h-5 w-5 text-secondary" />
               </div>
-              <h3 className="text-2xl font-bold">Education</h3>
-            </div>
+              <h3 className="text-xl font-semibold">Education</h3>
+            </motion.div>
 
-            <div className="space-y-8">
+            <div className="space-y-4">
               {education.map((edu, index) => (
-                <Card
-                  key={`${edu.institution}-${index}`}
-                  className="group hover:shadow-2xl hover:-translate-y-1 hover:border-secondary/50 transition-all duration-500 animate-fade-in-up"
-                  style={{ animationDelay: `${(index + experiences.length) * 0.2}s` }}
+                <motion.div
+                  key={edu.institution}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
                 >
-                  <CardHeader>
-                    <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                      <div>
-                        <CardTitle className="text-xl text-secondary group-hover:text-secondary-hover transition-colors">
-                          {edu.degree}
-                        </CardTitle>
-                        <p className="text-lg font-medium text-foreground mt-1">
-                          {edu.institution}
-                        </p>
+                  <Card className="hover:border-secondary/50 transition-all duration-300">
+                    <CardContent className="p-5">
+                      <h4 className="font-semibold text-foreground mb-1">{edu.degree}</h4>
+                      <p className="text-sm text-secondary font-medium mb-2">{edu.institution}</p>
+                      
+                      <div className="flex items-center gap-4 text-xs text-muted-foreground mb-2">
+                        <span className="flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
+                          {edu.period}
+                        </span>
+                        <span className="flex items-center gap-1">
+                          <MapPin className="h-3 w-3" />
+                          {edu.location}
+                        </span>
                       </div>
-                      <Badge variant="outline" className="w-fit border-success text-success">
-                        {edu.status}
-                      </Badge>
-                    </div>
-                    
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 text-muted-foreground text-sm">
-                      <div className="flex items-center gap-1">
-                        <Calendar className="h-4 w-4" />
-                        {edu.period}
-                      </div>
-                      <div className="flex items-center gap-1">
-                        <MapPin className="h-4 w-4" />
-                        {edu.location}
-                      </div>
-                    </div>
-                  </CardHeader>
-                  
-                  <CardContent className="space-y-4">
-                    <p className="text-muted-foreground font-medium">{edu.focus}</p>
-                    
-                    <div>
-                      <h4 className="font-medium mb-2 text-foreground">Relevant Courses:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {edu.courses.map((course) => (
-                          <Badge key={course} variant="secondary" className="text-xs">
-                            {course}
-                          </Badge>
-                        ))}
-                      </div>
+                      
+                      <p className="text-xs text-muted-foreground">{edu.focus}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+
+              {/* Thesis Highlight */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.5, duration: 0.4 }}
+              >
+                <Card className="border-l-4 border-l-accent">
+                  <CardContent className="p-5">
+                    <Badge variant="outline" className="mb-2 border-accent text-accent">Thesis</Badge>
+                    <h4 className="font-semibold text-foreground mb-1">3D Pose Estimation for Fatigue Detection</h4>
+                    <p className="text-xs text-muted-foreground mb-2">
+                      Smartphone-based system achieving <span className="text-accent font-semibold">93% accuracy</span>
+                    </p>
+                    <div className="flex flex-wrap gap-1">
+                      {['Python', 'TensorFlow', 'MMPose', 'SemGCN'].map((tech) => (
+                        <span key={tech} className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded">
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </CardContent>
                 </Card>
-              ))}
-
-              {/* Thesis Section */}
-              <Card className="border-l-4 border-l-accent animate-fade-in-up" style={{ animationDelay: `${(education.length + experiences.length) * 0.2}s` }}>
-                <CardHeader>
-                  <CardTitle className="text-xl text-accent">
-                    Bachelor's Thesis
-                  </CardTitle>
-                  <p className="text-lg font-medium text-foreground">
-                    3D Pose Estimation for Fatigue Detection
-                  </p>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="text-muted-foreground">
-                    Pioneered low-cost, smartphone-based system for physical fatigue detection, 
-                    achieving <span className="text-accent font-semibold">93% accuracy</span> via 4-fold cross-validation.
-                  </p>
-                  <div>
-                    <h4 className="font-medium mb-2 text-foreground">Technical Implementation:</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {['Python', 'TensorFlow/Keras', 'MMPose (HRNet)', 'SemGCN', 'Conv1D + BiLSTM', 'Random Forest', 'OpenMMLab'].map((tech) => (
-                        <Badge key={tech} variant="outline" className="text-xs border-accent text-accent">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              </motion.div>
             </div>
           </div>
         </div>
