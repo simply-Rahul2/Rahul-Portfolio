@@ -5,10 +5,6 @@ import CoreCompetenciesSection from '@/components/CoreCompetenciesSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import SkillsSection from '@/components/SkillsSection';
 import ProjectsSection from '@/components/ProjectsSection';
-import DesignSystemSection from '@/components/DesignSystemSection';
-import InteractionDesignSection from '@/components/InteractionDesignSection';
-import MobileDesignSection from '@/components/MobileDesignSection';
-import VisualDesignSection from '@/components/VisualDesignSection';
 import CertificationsSection from '@/components/CertificationsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
@@ -24,10 +20,6 @@ const Index = () => {
         <ExperienceSection />
         <SkillsSection />
         <ProjectsSection />
-        <DesignSystemSection />
-        <InteractionDesignSection />
-        <MobileDesignSection />
-        <VisualDesignSection />
         <CertificationsSection />
         <ContactSection />
       </main>

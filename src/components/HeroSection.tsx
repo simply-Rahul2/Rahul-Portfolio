@@ -1,111 +1,234 @@
-import { ArrowDown, Download, Mail } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ArrowDown, Github, Linkedin, Mail, MapPin, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.2,
+      },
+    },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  const expertise = [
+    'Full-Stack Development',
+    'AI & ML Engineering',
+    'Cloud Architecture',
+    'System Design',
+  ];
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-hero opacity-10" />
-      
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
-        <div className="absolute top-40 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12">
+      {/* Animated Background */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          animate={{
+            y: [-10, 10, -10],
+            rotate: [-2, 2, -2],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute top-20 left-[10%] w-72 h-72 bg-primary/10 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            y: [10, -10, 10],
+            rotate: [2, -2, 2],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute top-1/3 right-[5%] w-96 h-96 bg-secondary/15 rounded-full blur-3xl"
+        />
+        <motion.div
+          animate={{
+            y: [-5, 15, -5],
+            rotate: [-1, 1, -1],
+          }}
+          transition={{
+            duration: 7,
+            repeat: Infinity,
+            ease: 'easeInOut',
+          }}
+          className="absolute bottom-20 left-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
+        />
+        
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.02)_1px,transparent_1px)] bg-[size:60px_60px] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)]" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center animate-fade-in-up flex flex-col justify-center py-8">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="max-w-5xl mx-auto"
+        >
+          {/* Greeting & Name */}
+          <motion.div variants={itemVariants} className="mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
+              <Sparkles className="w-4 h-4" />
+              Open to opportunities in Sweden
+            </span>
+          </motion.div>
 
-          {/* Name */}
-          <div className="mb-8">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold bg-gradient-hero bg-clip-text text-transparent leading-tight px-2">
-              Yaswanth Rahul
-              <br />
-              Yarlagadda
-            </h1>
-          </div>
+          <motion.h1 
+            variants={itemVariants}
+            className="heading-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6"
+          >
+            Hi, I'm{' '}
+            <span className="text-gradient">Yaswanth Rahul</span>
+          </motion.h1>
 
-          {/* Content Below Name */}
-          <div className="space-y-4 md:space-y-6">
-            {/* Title */}
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4">
-              <span className="text-accent font-semibold">Recent Graduate</span> & Dynamic <span className="text-primary font-semibold">Full-Stack Developer</span> with{' '}
-              <span className="text-secondary font-semibold">3+ years</span> of experience building scalable,{' '}
-              <span className="text-accent font-semibold">AI-enhanced</span> applications
+          <motion.h2 
+            variants={itemVariants}
+            className="text-xl sm:text-2xl md:text-3xl text-muted-foreground font-medium mb-8"
+          >
+            <span className="text-primary">Full-Stack</span> &{' '}
+            <span className="text-secondary">AI Engineer</span>
+          </motion.h2>
+
+          {/* Story Intro */}
+          <motion.div variants={itemVariants} className="max-w-3xl mb-10">
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
+              I build systems end-to-end — from{' '}
+              <span className="text-foreground font-medium">clean, thoughtful user interfaces</span> to{' '}
+              <span className="text-foreground font-medium">scalable backend services</span> and{' '}
+              <span className="text-foreground font-medium">intelligent AI decision layers</span>.
             </p>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mt-4">
+              I didn't arrive at AI by chasing trends — I came here through engineering. 
+              What motivates me is solving problems where technology genuinely helps people 
+              understand complex things or work more effectively.
+            </p>
+          </motion.div>
 
-            {/* Skills Highlight */}
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm md:text-base px-4">
-              {[
-                'GenAI & Prompt Engineering',
-                'React & Angular',
-                'C# & .NET Core',
-                'LangChain & OpenAI',
-                'Vibe Coding'
-              ].map((skill, index) => (
-                <span
-                  key={skill}
-                  className="px-3 sm:px-4 py-2 bg-card/80 backdrop-blur-sm rounded-full border text-muted-foreground animate-scale-in"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-              <Button variant="outline" size="lg" className="group w-full sm:w-auto">
-                <Mail className="h-5 w-5 mr-2 group-hover:animate-pulse" />
-                Get In Touch
-              </Button>
-            </div>
-
-            {/* Location & Availability */}
-            <div className="text-muted-foreground px-4">
-              <p className="text-sm md:text-base">
-                📍 Karlskrona, Sweden • 🌍 Open to Stockholm relocation
-              </p>
-              <p className="text-xs sm:text-sm">
-                🚀 Currently exploring opportunities for full-time positions in Sweden
-              </p>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="animate-bounce pt-4">
-              <a
-                href="#about"
-                className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors duration-200"
+          {/* Expertise Tags */}
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-3 mb-10">
+            {expertise.map((skill, index) => (
+              <motion.span
+                key={skill}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.8 + index * 0.1 }}
+                className="px-4 py-2 bg-card border rounded-full text-sm font-medium text-foreground hover:border-primary hover:bg-primary/5 transition-all duration-300"
               >
-                <ArrowDown className="h-6 w-6" />
+                {skill}
+              </motion.span>
+            ))}
+          </motion.div>
+
+          {/* CTAs */}
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-4 mb-10">
+            <Button size="lg" className="group" asChild>
+              <a href="#projects">
+                View My Work
+                <ArrowDown className="ml-2 h-4 w-4 group-hover:translate-y-1 transition-transform" />
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <a href="mailto:yashwanthrahul5126@gmail.com">
+                <Mail className="mr-2 h-4 w-4" />
+                Get In Touch
+              </a>
+            </Button>
+          </motion.div>
+
+          {/* Location & Social */}
+          <motion.div variants={itemVariants} className="flex flex-wrap items-center gap-6 text-muted-foreground">
+            <span className="flex items-center gap-2 text-sm">
+              <MapPin className="w-4 h-4 text-primary" />
+              Karlskrona, Sweden
+            </span>
+            <div className="flex items-center gap-3">
+              <a
+                href="https://github.com/simply-Rahul8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 hover:bg-primary/10 rounded-full transition-colors"
+              >
+                <Github className="w-5 h-5" />
+              </a>
+              <a
+                href="https://linkedin.com/in/ry-"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 hover:bg-primary/10 rounded-full transition-colors"
+              >
+                <Linkedin className="w-5 h-5" />
               </a>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 pb-8 animate-fade-in px-4">
+        {/* Stats Row */}
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.6 }}
+          className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 max-w-4xl mx-auto"
+        >
           {[
             { number: '3+', label: 'Years Experience' },
             { number: '30+', label: 'Projects Delivered' },
-            { number: '100%', label: 'Client Satisfaction' },
-            { number: '5', label: 'Team Members Led' }
+            { number: '93%', label: 'ML Accuracy (Thesis)' },
+            { number: '5', label: 'Team Members Led' },
           ].map((stat, index) => (
-            <div
+            <motion.div
               key={stat.label}
-              className="text-center p-3 sm:p-4 md:p-6 bg-card/50 backdrop-blur-sm rounded-lg border animate-scale-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 1.4 + index * 0.1 }}
+              className="text-center p-4 bg-card/60 backdrop-blur-sm rounded-xl border hover:border-primary/50 transition-colors"
             >
-              <div className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-2">
+              <div className="text-2xl md:text-3xl font-bold text-primary mb-1">
                 {stat.number}
               </div>
               <div className="text-xs sm:text-sm text-muted-foreground">
                 {stat.label}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
+        {/* Scroll Indicator */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2 }}
+          className="flex justify-center mt-12"
+        >
+          <a
+            href="#about"
+            className="flex flex-col items-center text-muted-foreground hover:text-primary transition-colors"
+          >
+            <span className="text-xs mb-2">Scroll to explore</span>
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+            >
+              <ArrowDown className="w-5 h-5" />
+            </motion.div>
+          </a>
+        </motion.div>
       </div>
     </section>
   );
