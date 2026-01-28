@@ -204,13 +204,36 @@ const ExperienceSection = () => {
               >
                 <Card className="border-l-4 border-l-accent">
                   <CardContent className="p-5">
-                    <Badge variant="outline" className="mb-2 border-accent text-accent">Thesis</Badge>
-                    <h4 className="font-semibold text-foreground mb-1">3D Pose Estimation for Fatigue Detection</h4>
-                    <p className="text-xs text-muted-foreground mb-2">
-                      Smartphone-based system achieving <span className="text-accent font-semibold">93% accuracy</span>
+                    <Badge variant="outline" className="mb-3 border-accent text-accent">Bachelor's Thesis</Badge>
+                    <h4 className="font-semibold text-foreground mb-2">3D Pose Estimation for Fatigue Detection</h4>
+                    
+                    <p className="text-sm text-muted-foreground mb-3 leading-relaxed">
+                      Developed a practical, smartphone-based motion analysis system for detecting physical fatigue 
+                      without expensive lab equipment. The research focused on making pose estimation accessible 
+                      for real-world applications.
                     </p>
+
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-start gap-2 text-xs text-muted-foreground">
+                        <span className="text-accent mt-0.5">•</span>
+                        <span>Designed end-to-end pipeline using <span className="text-foreground font-medium">Python, TensorFlow, and OpenMMLab</span></span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs text-muted-foreground">
+                        <span className="text-accent mt-0.5">•</span>
+                        <span>Achieved <span className="text-accent font-semibold">93% accuracy</span> in fatigue classification using SemGCN architecture</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs text-muted-foreground">
+                        <span className="text-accent mt-0.5">•</span>
+                        <span>Low-cost alternative to lab-based motion capture systems</span>
+                      </div>
+                      <div className="flex items-start gap-2 text-xs text-muted-foreground">
+                        <span className="text-accent mt-0.5">•</span>
+                        <span>Research that solves real problems and can actually be deployed</span>
+                      </div>
+                    </div>
+
                     <div className="flex flex-wrap gap-1">
-                      {['Python', 'TensorFlow', 'MMPose', 'SemGCN'].map((tech) => (
+                      {['Python', 'TensorFlow', 'MMPose', 'SemGCN', 'OpenMMLab', 'Deep Learning'].map((tech) => (
                         <span key={tech} className="text-xs bg-accent/10 text-accent px-2 py-0.5 rounded">
                           {tech}
                         </span>

@@ -83,10 +83,14 @@ const HeroSection = () => {
           className="max-w-5xl mx-auto"
         >
           {/* Greeting & Name */}
-          <motion.div variants={itemVariants} className="mb-6">
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium mb-6">
+          <motion.div variants={itemVariants} className="mb-6 flex flex-wrap gap-2">
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium">
               <Sparkles className="w-4 h-4" />
               Open to opportunities in Sweden
+            </span>
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-secondary/10 rounded-full text-secondary text-sm font-medium">
+              <MapPin className="w-4 h-4" />
+              Open to relocation
             </span>
           </motion.div>
 

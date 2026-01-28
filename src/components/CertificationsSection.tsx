@@ -9,6 +9,7 @@ const CertificationsSection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const certifications = [
+    { title: 'ChatGPT Prompt Engineering for Developers', issuer: 'DeepLearning.AI', type: 'AI/ML' },
     { title: 'Microsoft Azure Fundamentals', issuer: 'Microsoft', type: 'Cloud' },
     { title: 'AWS Academy Cloud Foundations', issuer: 'AWS', type: 'Cloud' },
     { title: 'AI LLM Fundamentals', issuer: 'Coursera', type: 'AI/ML' },
