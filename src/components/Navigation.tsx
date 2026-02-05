@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Download, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isGeneratingPDF, setIsGeneratingPDF] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,31 @@ const Navigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleDownloadPDF = async () => {
+    setIsGeneratingPDF(true);
+    try {
+      const html2pdf = (await import('html2pdf.js')).default;
+      const element = document.querySelector('main');
+      
+      if (element) {
+        const opt = {
+          margin: [10, 10, 10, 10] as [number, number, number, number],
+          filename: 'Yaswanth_Rahul_Portfolio.pdf',
+          image: { type: 'jpeg' as const, quality: 0.98 },
+          html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+          jsPDF: { unit: 'mm' as const, format: 'a4' as const, orientation: 'portrait' as const },
+          pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+        };
+        
+        await html2pdf().set(opt).from(element).save();
+      }
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+    } finally {
+      setIsGeneratingPDF(false);
+    }
+  };
 
   const navItems = [
     { href: '#about', label: 'About' },
@@ -38,11 +64,25 @@ const Navigation = () => {
     }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <div className="flex-shrink-0">
+          {/* Logo & Download */}
+          <div className="flex items-center gap-3">
             <a href="#" className="text-2xl font-bold text-gradient heading-display">
               YR.
             </a>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={handleDownloadPDF}
+              disabled={isGeneratingPDF}
+              className="hidden sm:flex items-center gap-2 text-xs border-primary/30 hover:border-primary hover:bg-primary/5"
+            >
+              {isGeneratingPDF ? (
+                <Loader2 className="h-3 w-3 animate-spin" />
+              ) : (
+                <Download className="h-3 w-3" />
+              )}
+              {isGeneratingPDF ? 'Generating...' : 'Download PDF'}
+            </Button>
           </div>
 
           {/* Desktop Navigation */}
