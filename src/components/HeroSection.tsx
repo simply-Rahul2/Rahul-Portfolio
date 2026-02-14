@@ -120,7 +120,8 @@ const HeroSection = () => {
             </p>
             <p className="text-base md:text-lg text-muted-foreground leading-relaxed mt-4">
               I didn't arrive at AI by chasing trends — I came here through engineering. 
-              What motivates me is solving problems where technology genuinely helps people 
+              Certified in AI & Analytics from <span className="text-foreground font-medium">IIT Roorkee</span>, 
+              what motivates me is solving problems where technology genuinely helps people 
               understand complex things or work more effectively.
             </p>
           </motion.div>
