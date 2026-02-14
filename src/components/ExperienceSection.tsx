@@ -36,6 +36,20 @@ const ExperienceSection = () => {
       technologies: ['Angular', 'ASP.NET Core', 'C#', 'SQL Server', 'SignalR']
     },
     {
+      title: 'Software Engineer (Java) – Virtual Experience',
+      company: 'JP Morgan Chase & Co. (Forage)',
+      location: 'Virtual',
+      period: '2025',
+      achievements: [
+        'Built Java 17 & Spring Boot backend for high-volume transaction processing',
+        'Integrated Apache Kafka for async, event-driven scalable workflows',
+        'Implemented Spring Data JPA with H2, enforcing transactional consistency',
+        'Exposed REST APIs with clean controller–service architecture'
+      ],
+      technologies: ['Java 17', 'Spring Boot', 'Apache Kafka', 'Spring Data JPA', 'Maven'],
+      credential: 'pu8iTnsQJgRMyL69W'
+    },
+    {
       title: 'Cloud Computing Intern',
       company: 'HDLC Info Technologies',
       location: 'India',
@@ -113,6 +127,11 @@ const ExperienceSection = () => {
                           <h4 className="font-semibold text-foreground">{exp.title}</h4>
                           <p className="text-sm text-primary font-medium">{exp.company}</p>
                         </div>
+                        {'credential' in exp && (exp as any).credential && (
+                          <Badge variant="outline" className="text-xs shrink-0">
+                            ID: {(exp as any).credential}
+                          </Badge>
+                        )}
                       </div>
                       
                       <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
