@@ -80,8 +80,10 @@ const HeroSection = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="max-w-5xl mx-auto"
+          className="max-w-5xl mx-auto flex flex-col-reverse lg:flex-row items-center lg:items-start gap-10"
         >
+          {/* Left Content */}
+          <div className="flex-1">
           {/* Greeting & Name */}
           <motion.div variants={itemVariants} className="mb-6 flex flex-wrap gap-2">
             <span className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full text-primary text-sm font-medium">
@@ -180,6 +182,24 @@ const HeroSection = () => {
               >
                 <Linkedin className="w-5 h-5" />
               </a>
+            </div>
+          </motion.div>
+          </div>
+
+          {/* Profile Picture */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5, duration: 0.7 }}
+            className="flex-shrink-0"
+          >
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full border-4 border-primary/30 p-1">
+              <img
+                src="/RY Profile image.png"
+                alt="Yaswanth Rahul"
+                className="w-full h-full rounded-full object-cover"
+              />
+              <div className="absolute inset-0 rounded-full ring-2 ring-primary/10 ring-offset-2 ring-offset-background" />
             </div>
           </motion.div>
         </motion.div>
