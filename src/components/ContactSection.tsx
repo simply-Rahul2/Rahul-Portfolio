@@ -11,7 +11,7 @@ const ContactSection = () => {
   const contactInfo = [
     { icon: Mail, label: 'Email', value: 'yashwanthrahul5126@gmail.com', href: 'mailto:yashwanthrahul5126@gmail.com' },
     { icon: MapPin, label: 'Location', value: 'Karlskrona, Sweden', href: '#' },
-    { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/ry-', href: 'https://linkedin.com/in/ry-' },
+    { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/yaswanth-rahul-yarlagadda', href: 'https://linkedin.com/in/yaswanth-rahul-yarlagadda' },
     { icon: Github, label: 'GitHub', value: 'github.com/simply-Rahul8', href: 'https://github.com/simply-Rahul8' },
   ];
 
@@ -81,7 +81,7 @@ const ContactSection = () => {
                     </a>
                   </Button>
                   <Button variant="outline" size="lg" asChild>
-                    <a href="https://linkedin.com/in/ry-" target="_blank" rel="noopener noreferrer">
+                    <a href="https://linkedin.com/in/yaswanth-rahul-yarlagadda" target="_blank" rel="noopener noreferrer">
                       <Linkedin className="h-4 w-4 mr-2" />
                       Connect on LinkedIn
                     </a>
