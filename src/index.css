@@ -31,7 +31,7 @@
 
     /* Neutrals */
     --muted: 30 5% 94%;
-    --muted-foreground: 0 0% 45%;
+    --muted-foreground: 0 0% 35%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 8%;
     --border: 0 0% 90%;
@@ -85,7 +85,7 @@
     --accent-light: 0 0% 10%;
 
     --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 55%;
+    --muted-foreground: 0 0% 65%;
     --card: 0 0% 7%;
     --card-foreground: 0 0% 92%;
     --border: 0 0% 15%;
