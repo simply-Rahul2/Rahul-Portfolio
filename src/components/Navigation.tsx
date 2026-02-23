@@ -55,7 +55,7 @@ const Navigation = () => {
               href="#contact"
               className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
             >
-              Book A Call
+              Contact
               <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
@@ -92,7 +92,7 @@ const Navigation = () => {
                 className="inline-flex items-center gap-1 px-3 py-3 text-base font-medium text-foreground"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Book A Call
+                Contact
                 <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
