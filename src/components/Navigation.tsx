@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -8,7 +8,7 @@ const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { href: '#about', label: 'SYSTEMS' },
+    { href: '#about', label: 'SUMMARY & STORY' },
     { href: '#experience', label: 'EXPERIENCE' },
     { href: '#projects', label: 'PROJECTS' },
     { href: '#contact', label: 'CONTACT' },
@@ -22,7 +22,7 @@ const Navigation = () => {
         <div>
           <a href="#" className="inline-block mb-2">
             <span className="text-3xl font-bold tracking-tight heading-display" style={{ color: 'hsl(var(--sidebar-foreground))' }}>
-              YR.
+              RY.
             </span>
           </a>
           <h2 className="text-2xl font-bold tracking-tight mt-6 heading-display leading-tight" style={{ color: 'hsl(var(--sidebar-foreground))' }}>
@@ -49,14 +49,6 @@ const Navigation = () => {
         {/* Bottom - Resume + Theme */}
         <div className="flex flex-col gap-4">
           <ThemeToggle />
-          <a
-            href="mailto:yashwanthrahul5126@gmail.com"
-            className="inline-flex items-center gap-2 bg-foreground/10 hover:bg-foreground/20 text-sm font-medium tracking-wide px-5 py-3 rounded-lg transition-colors"
-            style={{ color: 'hsl(var(--sidebar-foreground))' }}
-          >
-            Download Resume
-            <ArrowRight className="w-4 h-4" />
-          </a>
         </div>
       </aside>
 
@@ -64,7 +56,7 @@ const Navigation = () => {
       <nav className="lg:hidden fixed top-0 w-full z-50 sidebar-nav">
         <div className="flex items-center justify-between px-5 h-16">
           <a href="#" className="text-xl font-bold heading-display" style={{ color: 'hsl(var(--sidebar-foreground))' }}>
-            YR.
+            RY.
           </a>
           <div className="flex items-center gap-2">
             <ThemeToggle />
