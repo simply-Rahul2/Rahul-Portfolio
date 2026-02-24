@@ -1,105 +1,109 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { useState } from 'react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navigation = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const navItems = [
-    { href: '#about', label: 'About Me' },
-    { href: '#projects', label: 'Portfolio' },
-    { href: '#experience', label: 'Experience' },
-    { href: '#certifications', label: 'Certifications' },
+    { href: '#about', label: 'SYSTEMS' },
+    { href: '#experience', label: 'EXPERIENCE' },
+    { href: '#projects', label: 'PROJECTS' },
+    { href: '#contact', label: 'CONTACT' },
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
-      isScrolled 
-        ? 'bg-background/90 backdrop-blur-md border-b' 
-        : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex justify-between items-center h-16 lg:h-20">
-          {/* Logo */}
-          <a href="#" className="text-xl font-bold tracking-tight text-foreground heading-display">
+    <>
+      {/* Desktop Sidebar */}
+      <aside className="hidden lg:flex sidebar-nav fixed left-0 top-0 h-screen w-72 flex-col justify-between z-50 px-8 py-10">
+        {/* Top - Brand */}
+        <div>
+          <a href="#" className="inline-block mb-2">
+            <span className="text-3xl font-bold tracking-tight heading-display" style={{ color: 'hsl(var(--sidebar-foreground))' }}>
+              YR.
+            </span>
+          </a>
+          <h2 className="text-2xl font-bold tracking-tight mt-6 heading-display leading-tight" style={{ color: 'hsl(var(--sidebar-foreground))' }}>
+            YASWANTH<br />RAHUL
+          </h2>
+          <p className="text-sm mt-2 tracking-wide" style={{ color: 'hsl(var(--sidebar-muted))' }}>
+            Full-Stack & AI Engineer
+          </p>
+        </div>
+
+        {/* Nav Links */}
+        <nav className="flex flex-col gap-1">
+          {navItems.map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="nav-link text-sm font-medium tracking-[0.15em] py-2"
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+
+        {/* Bottom - Resume + Theme */}
+        <div className="flex flex-col gap-4">
+          <ThemeToggle />
+          <a
+            href="mailto:yashwanthrahul5126@gmail.com"
+            className="inline-flex items-center gap-2 bg-foreground/10 hover:bg-foreground/20 text-sm font-medium tracking-wide px-5 py-3 rounded-lg transition-colors"
+            style={{ color: 'hsl(var(--sidebar-foreground))' }}
+          >
+            Download Resume
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
+      </aside>
+
+      {/* Mobile Top Bar */}
+      <nav className="lg:hidden fixed top-0 w-full z-50 sidebar-nav">
+        <div className="flex items-center justify-between px-5 h-16">
+          <a href="#" className="text-xl font-bold heading-display" style={{ color: 'hsl(var(--sidebar-foreground))' }}>
             YR.
           </a>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                className="text-muted-foreground hover:text-foreground text-sm font-medium transition-colors duration-300"
-              >
-                {item.label}
-              </a>
-            ))}
-          </div>
-
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-            <ThemeToggle />
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-1 text-sm font-medium text-foreground hover:text-muted-foreground transition-colors"
-            >
-              Contact
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center gap-2">
+          <div className="flex items-center gap-2">
             <ThemeToggle />
             <Button
               variant="ghost"
               size="sm"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-foreground"
             >
               {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </Button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden pb-6">
-            <div className="flex flex-col gap-1">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-muted-foreground hover:text-foreground px-3 py-3 text-base font-medium transition-colors border-b border-border/50"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              ))}
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-1 px-3 py-3 text-base font-medium text-foreground"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                Contact
-                <ArrowUpRight className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-        )}
-      </div>
-    </nav>
+        <AnimatePresence>
+          {isMobileMenuOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: 'auto', opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              className="overflow-hidden border-t border-border/20 px-5 pb-6"
+            >
+              <div className="flex flex-col gap-1 pt-4">
+                {navItems.map((item) => (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="nav-link text-sm font-medium tracking-[0.15em] py-3"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </>
   );
 };
 
