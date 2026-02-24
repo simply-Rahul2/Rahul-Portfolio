@@ -25,10 +25,7 @@ const Navigation = () => {
               RY.
             </span>
           </a>
-          <h2 className="text-2xl font-bold tracking-tight mt-6 heading-display leading-tight" style={{ color: 'hsl(var(--sidebar-foreground))' }}>
-            YASWANTH<br />RAHUL
-          </h2>
-          <p className="text-sm mt-2 tracking-wide" style={{ color: 'hsl(var(--sidebar-muted))' }}>
+          <p className="text-sm mt-4 tracking-wide" style={{ color: 'hsl(var(--sidebar-muted))' }}>
             Full-Stack & AI Engineer
           </p>
         </div>
