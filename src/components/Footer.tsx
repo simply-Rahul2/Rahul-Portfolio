@@ -13,7 +13,7 @@ const Footer = () => {
           <div className="flex items-center gap-4">
             <span className="text-2xl font-bold heading-display text-foreground">RY.</span>
             <div className="text-sm text-muted-foreground">
-              <p>Full-Stack & AI Engineer</p>
+              <p>Full-Stack & AI Developer</p>
               <p>📍 Karlskrona, Sweden</p>
             </div>
           </div>
