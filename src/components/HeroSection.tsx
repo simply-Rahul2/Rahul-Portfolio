@@ -54,7 +54,7 @@ const HeroSection = () => {
               variants={itemVariants}
               className="text-lg font-medium text-foreground/80 mb-4"
             >
-              Full-Stack & AI Engineer
+              Full-Stack & AI Developer
             </motion.p>
 
             <motion.p
