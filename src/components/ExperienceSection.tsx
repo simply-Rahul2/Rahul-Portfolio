@@ -117,47 +117,44 @@ const ExperienceSection = () => {
                 >
                   <Card className="hover:border-primary/50 transition-all duration-300">
                     <CardContent className="p-5">
-                      <div className="flex items-start justify-between mb-2">
-                        <div>
-                          <h4 className="font-semibold text-foreground">{exp.title}</h4>
-                          <p className="text-sm text-primary font-medium">{exp.company}</p>
+                      <div className="flex items-start justify-between gap-3 mb-2">
+                        <div className="flex items-center gap-2 flex-wrap">
+                          {exp.isCurrent ? (
+                            <Badge className="bg-accent/15 text-accent border-accent/30 hover:bg-accent/20 text-[10px] uppercase tracking-wider">
+                              <span className="w-1.5 h-1.5 rounded-full bg-accent mr-1.5 animate-pulse" />
+                              Current
+                            </Badge>
+                          ) : null}
+                          <span className="text-xs text-muted-foreground">
+                            {exp.type}{exp.duration ? ` · ${exp.duration}` : ''}
+                          </span>
                         </div>
-                        {'credential' in exp && (exp as any).credential && (
-                          <Badge variant="outline" className="text-xs shrink-0">
-                            ID: {(exp as any).credential}
-                          </Badge>
-                        )}
-                      </div>
-                      
-                      <div className="flex items-center gap-4 text-xs text-muted-foreground mb-3">
-                        <span className="flex items-center gap-1">
-                          <Calendar className="h-3 w-3" />
+                        <Badge variant="outline" className="text-[10px] font-mono shrink-0">
                           {exp.period}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <MapPin className="h-3 w-3" />
-                          {exp.location}
-                        </span>
+                        </Badge>
                       </div>
 
-                      <ul className="space-y-1 mb-3">
-                        {exp.achievements.slice(0, 3).map((achievement, i) => (
+                      <h4 className="font-semibold text-foreground text-lg mb-1">{exp.title}</h4>
+                      <p className="text-sm mb-3">
+                        <span className="text-primary font-medium">{exp.company}</span>
+                        <span className="text-muted-foreground"> · {exp.location}</span>
+                      </p>
+
+                      <ul className="space-y-1.5 mb-3">
+                        {exp.achievements.map((achievement, i) => (
                           <li key={i} className="text-xs text-muted-foreground flex items-start gap-2">
-                            <span className="text-primary mt-0.5">•</span>
+                            <span className="text-primary mt-0.5">▸</span>
                             {achievement}
                           </li>
                         ))}
                       </ul>
 
-                      <div className="flex flex-wrap gap-1">
-                        {exp.technologies.slice(0, 4).map((tech) => (
-                          <span key={tech} className="text-xs bg-muted px-2 py-0.5 rounded text-muted-foreground">
+                      <div className="flex flex-wrap gap-1.5">
+                        {exp.technologies.map((tech) => (
+                          <span key={tech} className="text-[10px] font-mono px-2 py-1 rounded border border-primary/30 text-primary bg-primary/5">
                             {tech}
                           </span>
                         ))}
-                        {exp.technologies.length > 4 && (
-                          <span className="text-xs text-muted-foreground">+{exp.technologies.length - 4}</span>
-                        )}
                       </div>
                     </CardContent>
                   </Card>
