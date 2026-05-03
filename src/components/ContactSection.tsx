@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { Mail, MapPin, Linkedin, Github, Send } from 'lucide-react';
+import { Mail, MapPin, Linkedin, Github, Send, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 
@@ -13,6 +13,7 @@ const ContactSection = () => {
     { icon: MapPin, label: 'Location', value: 'Karlskrona, Sweden', href: '#' },
     { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/yaswanthrahul', href: 'https://www.linkedin.com/in/yaswanthrahul/' },
     { icon: Github, label: 'GitHub', value: 'github.com/simply-Rahul8', href: 'https://github.com/simply-Rahul8' },
+    { icon: MessageCircle, label: 'WhatsApp', value: '+91 75695 87249', href: 'https://wa.me/917569587249' },
   ];
 
   return (
@@ -38,7 +39,7 @@ const ContactSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ delay: 0.1, duration: 0.5 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10"
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 mb-10"
           >
             {contactInfo.map((item, index) => (
               <motion.a

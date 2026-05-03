@@ -1,4 +1,4 @@
-import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowUp, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
@@ -30,6 +30,11 @@ const Footer = () => {
             <a href="mailto:yashwanthrahul5126@gmail.com"
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <Mail className="h-5 w-5 text-muted-foreground hover:text-primary" />
+            </a>
+            <a href="https://wa.me/917569587249" target="_blank" rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
+              <MessageCircle className="h-5 w-5 text-muted-foreground hover:text-primary" />
             </a>
           </div>
 
