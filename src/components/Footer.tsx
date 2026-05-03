@@ -2,6 +2,11 @@ import { ArrowUp, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Footer = () => {
+  const emailAddress = 'yashwanthrahul5126@gmail.com';
+  const emailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
+  const linkedInUrl = 'https://www.linkedin.com/in/yaswanthrahul/';
+  const whatsAppUrl = 'https://wa.me/917569587249';
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -19,25 +24,22 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <button type="button" aria-label="GitHub"
-              onClick={() => window.open('https://github.com/simply-Rahul8', '_blank', 'noopener,noreferrer')}
+            <a href="https://github.com/simply-Rahul8" target="_blank" rel="noopener noreferrer" aria-label="GitHub"
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <Github className="h-5 w-5 text-muted-foreground hover:text-primary" />
-            </button>
-            <button type="button" aria-label="LinkedIn"
-              onClick={() => window.open('https://www.linkedin.com/in/yaswanthrahul/', '_blank', 'noopener,noreferrer')}
+            </a>
+            <a href={linkedInUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary" />
-            </button>
-            <a href="mailto:yashwanthrahul5126@gmail.com"
+            </a>
+            <a href={emailUrl} target="_blank" rel="noopener noreferrer" aria-label="Email"
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <Mail className="h-5 w-5 text-muted-foreground hover:text-primary" />
             </a>
-            <button type="button" aria-label="WhatsApp"
-              onClick={() => window.open('https://wa.me/917569587249', '_blank', 'noopener,noreferrer')}
+            <a href={whatsAppUrl} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <MessageCircle className="h-5 w-5 text-muted-foreground hover:text-primary" />
-            </button>
+            </a>
           </div>
 
           <div className="flex items-center gap-4">
