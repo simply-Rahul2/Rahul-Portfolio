@@ -47,10 +47,16 @@ const ContactSection = () => {
                 href={item.href}
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                onClick={(e) => {
+                  if (item.href.startsWith('http')) {
+                    e.preventDefault();
+                    window.open(item.href, '_blank', 'noopener,noreferrer');
+                  }
+                }}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.2 + index * 0.05, duration: 0.3 }}
-                className="p-4 bg-card border rounded-xl text-center hover:border-primary/50 hover:shadow-md transition-all duration-300 group"
+                className="p-4 bg-card border rounded-xl text-center hover:border-primary/50 hover:shadow-md transition-all duration-300 group cursor-pointer"
               >
                 <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-2 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <item.icon className="h-5 w-5" />

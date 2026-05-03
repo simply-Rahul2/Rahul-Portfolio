@@ -19,23 +19,25 @@ const Footer = () => {
           </div>
 
           <div className="flex items-center gap-3">
-            <a href="https://github.com/simply-Rahul8" target="_blank" rel="noopener noreferrer"
+            <button type="button" aria-label="GitHub"
+              onClick={() => window.open('https://github.com/simply-Rahul8', '_blank', 'noopener,noreferrer')}
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <Github className="h-5 w-5 text-muted-foreground hover:text-primary" />
-            </a>
-            <a href="https://www.linkedin.com/in/yaswanthrahul/" target="_blank" rel="noopener noreferrer"
+            </button>
+            <button type="button" aria-label="LinkedIn"
+              onClick={() => window.open('https://www.linkedin.com/in/yaswanthrahul/', '_blank', 'noopener,noreferrer')}
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary" />
-            </a>
+            </button>
             <a href="mailto:yashwanthrahul5126@gmail.com"
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <Mail className="h-5 w-5 text-muted-foreground hover:text-primary" />
             </a>
-            <a href="https://wa.me/917569587249" target="_blank" rel="noopener noreferrer"
-              aria-label="WhatsApp"
+            <button type="button" aria-label="WhatsApp"
+              onClick={() => window.open('https://wa.me/917569587249', '_blank', 'noopener,noreferrer')}
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <MessageCircle className="h-5 w-5 text-muted-foreground hover:text-primary" />
-            </a>
+            </button>
           </div>
 
           <div className="flex items-center gap-4">
