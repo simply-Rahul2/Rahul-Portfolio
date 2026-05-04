@@ -3,9 +3,9 @@ import { Button } from '@/components/ui/button';
 
 const Footer = () => {
   const emailAddress = 'yashwanthrahul5126@gmail.com';
-  const emailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
+  const emailUrl = `mailto:${emailAddress}`;
   const linkedInUrl = 'https://www.linkedin.com/in/yaswanthrahul/';
-  const whatsAppUrl = 'https://wa.me/917569587249';
+  const whatsAppUrl = 'https://wa.me/917569687249';
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -32,7 +32,7 @@ const Footer = () => {
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary" />
             </a>
-            <a href={emailUrl} target="_blank" rel="noopener noreferrer" aria-label="Email"
+            <a href={emailUrl} aria-label="Email"
               className="p-2 hover:bg-primary/10 rounded-lg transition-colors">
               <Mail className="h-5 w-5 text-muted-foreground hover:text-primary" />
             </a>

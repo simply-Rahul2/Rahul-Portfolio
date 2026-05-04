@@ -8,16 +8,17 @@ const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const emailAddress = 'yashwanthrahul5126@gmail.com';
-  const emailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${emailAddress}`;
+  const emailUrl = `mailto:${emailAddress}`;
   const linkedInUrl = 'https://www.linkedin.com/in/yaswanthrahul/';
-  const whatsAppUrl = 'https://wa.me/917569587249';
+  const whatsAppUrl = 'https://wa.me/917569687249';
+  const githubUrl = 'https://github.com/simply-Rahul8';
 
   const contactInfo = [
-    { icon: Mail, label: 'Email', value: emailAddress, href: emailUrl },
-    { icon: MapPin, label: 'Location', value: 'Karlskrona, Sweden', href: '#' },
-    { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/yaswanthrahul', href: linkedInUrl },
-    { icon: Github, label: 'GitHub', value: 'github.com/simply-Rahul8', href: 'https://github.com/simply-Rahul8' },
-    { icon: MessageCircle, label: 'WhatsApp', value: '+91 75695 87249', href: whatsAppUrl },
+    { icon: Mail, label: 'Email', value: emailAddress, href: emailUrl, external: false },
+    { icon: MapPin, label: 'Location', value: 'Karlskrona, Sweden', href: '#', external: false },
+    { icon: Linkedin, label: 'LinkedIn', value: 'linkedin.com/in/yaswanthrahul', href: linkedInUrl, external: true },
+    { icon: Github, label: 'GitHub', value: 'github.com/simply-Rahul8', href: githubUrl, external: true },
+    { icon: MessageCircle, label: 'WhatsApp', value: '+91 75696 87249', href: whatsAppUrl, external: true },
   ];
 
   return (
@@ -49,8 +50,8 @@ const ContactSection = () => {
               <motion.a
                 key={item.label}
                 href={item.href}
-                target={item.href.startsWith('http') ? '_blank' : undefined}
-                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                target={item.external ? '_blank' : undefined}
+                rel={item.external ? 'noopener noreferrer' : undefined}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.2 + index * 0.05, duration: 0.3 }}
@@ -80,7 +81,7 @@ const ContactSection = () => {
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
                   <Button size="lg" asChild>
-                    <a href={emailUrl} target="_blank" rel="noopener noreferrer">
+                    <a href={emailUrl}>
                       <Send className="h-4 w-4 mr-2" />
                       Get in Touch
                     </a>
