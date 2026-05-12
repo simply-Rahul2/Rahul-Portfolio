@@ -12,11 +12,11 @@ const ProjectsSection = () => {
   const projects = [
     {
       title: 'SHL Assessment Recommender',
-      description: 'LLM-agent powered recommender using MMR reranking, FAISS vector search, MiniLM embeddings, and a full RAG pipeline.',
+      description: 'LLM-agent recommender that helps recruiters pick the right SHL assessments. Two-call LLM pipeline (intent classification + grounded recommendations), MMR reranking over a FAISS cosine index on all-MiniLM-L6-v2 embeddings, pre-filters for technical/coding terms, and SHL grid + JSON API scraping for high-fidelity metadata. Hallucinations reduced via strict Pydantic schemas, "no internal knowledge" prompting, and a behavioral test suite covering prompt injection, schema compliance, and Recall@10.',
       category: 'AI/LLM',
       icon: Brain,
-      highlights: ['LLM Agents', 'MMR Reranking', 'RAG Pipeline'],
-      technologies: ['Python', 'LangChain', 'FAISS', 'MiniLM', 'RAG'],
+      highlights: ['Two-call LLM', 'MMR + FAISS', 'Recall@10 tested'],
+      technologies: ['Python', 'LangChain', 'FAISS', 'MiniLM', 'Pydantic', 'RAG'],
       githubUrl: 'https://github.com/simply-Rahul8/shl-recommender-agent'
     },
     {
@@ -229,7 +229,7 @@ const ProjectsSection = () => {
           className="mt-12 grid grid-cols-3 gap-4 max-w-2xl mx-auto"
         >
           {[
-            { number: '30+', label: 'Projects Delivered' },
+            { number: '15+', label: 'Projects Delivered' },
             { number: '500+', label: 'Users Served' },
             { number: '100%', label: 'Client Satisfaction' },
           ].map((stat) => (
