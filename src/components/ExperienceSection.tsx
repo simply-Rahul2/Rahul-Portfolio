@@ -13,9 +13,9 @@ const ExperienceSection = () => {
       title: 'Full Stack AI Developer Intern',
       company: 'Gaddr',
       location: 'Sweden',
-      period: 'Mar 2025 - Sep 2025',
+      period: 'Mar 2025 - Apr 2026',
       type: 'Internship',
-      duration: '7 months',
+      duration: '13 months',
       isCurrent: false,
       achievements: [
         'Engineered AI agents and RAG pipelines using Python, LangChain, OpenAI API, and PostgreSQL',
