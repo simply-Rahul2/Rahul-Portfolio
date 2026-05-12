@@ -17,7 +17,8 @@ const ProjectsSection = () => {
       icon: Brain,
       highlights: ['Two-call LLM', 'MMR + FAISS', 'Recall@10 tested'],
       technologies: ['Python', 'LangChain', 'FAISS', 'MiniLM', 'Pydantic', 'RAG'],
-      githubUrl: 'https://github.com/simply-Rahul8/shl-recommender-agent'
+      githubUrl: 'https://github.com/simply-Rahul8/shl-recommender-agent',
+      demoUrl: 'https://shl-recommender-agent-production.up.railway.app/'
     },
     {
       title: '3D Pose Estimation & Fatigue Detection',
