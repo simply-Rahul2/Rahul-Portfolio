@@ -270,7 +270,7 @@ const ExperienceSection = () => {
                       href="http://bth.diva-portal.org/smash/record.jsf?pid=diva2:1981297"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1.5 text-xs font-medium text-accent hover:text-accent/80 transition-colors"
+                      className="inline-flex items-center gap-1.5 text-sm font-black text-black bg-accent hover:bg-accent/90 px-3 py-1.5 rounded-md transition-colors"
                     >
                       📄 View Publication on DiVA →
                     </a>
